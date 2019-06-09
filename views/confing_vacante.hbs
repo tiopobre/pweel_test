@@ -1,0 +1,143 @@
+<!-- Contenido -->
+<div class="container">
+    <div class="row mt-3 mb-5 mx-5">
+        <!-- Breadcrumb -->
+        <div class="col-12 pl-0">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb arr-right">
+                    <li class="breadcrumb-item" aria-current="page"><strong>Mis vacante</strong></li>
+                    <li class="breadcrumb-item active" aria-current="page" id="num-vacante"><strong>Vacante No.
+                            #</strong></li>
+                </ol>
+            </nav>
+        </div>
+        <!-- Content -->
+
+        <!--- Titulo de la página --->
+        <div class=" titulo col-12 mb-3 px-3 py-2" id="titulo_vacante">
+            <div class="flex-row row justify-content-between align-items-center px-4">
+                <i class='fas fa-user-tie' style='font-size:24px'></i>
+                <h4>Vacante ·</h4>
+                <button type="button" class="btn btn-outline-secondary" id="btn_config_user"><i class="fa fa-gear"
+                        style="font-size:25px; color:#ff7011"></i></button>
+            </div>
+        </div>
+        <div class="vl mx-3 d-lg-none d-none d-lg-block d-xl-block"></div>
+        <!--- Formulario --->
+        <div class="col-lg-12 col-md-12 ml-md-0 ml-lg-3 p-0" style="background: rgb(250,250,250)">
+            <!-- Avatar -->
+            <div class="list-group filter-wrap">
+                <!-- Info Empleador -->
+                <article class="list-group-item p-0">
+                    <header
+                        class="filter-header d-flex justify-content-start align-items-center px-3 py-1 border border-light rounded-top border-right-0 border-left-0 border-top-0">
+                        <i class='far fa-address-card' style='font-size:24px'></i>
+                        <p class="title mb-0 ml-2 h6">Informacion Empleador</p>
+                        <button type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="true"
+                            class="btn btn-outline-secondary px-1 py-1 ml-auto" id="btn_edit_pers_info"><i
+                                class="material-icons">edit</i></button>
+                    </header>
+                    <div class="filter-content p-4 collapse show" id="collapse1">
+                        <small class="text-muted">Nombre </small>
+                        <h4 id="#fullname">Daniel Alejandro Srrano</h4>
+                        <small class="text-muted">Teléfono de contacto</small>
+                        <h4 id="cel">+57 3355335</h4>
+                        <small class="text-muted">e-mail</small>
+                        <h4 id="cel">danil.swrano@email.com</h4>
+                    </div>
+
+                </article>
+                <!-- Info cargo -->
+                <article class="list-group-item p-0">
+                    <header class="filter-header d-flex justify-content-start align-items-center px-3 py-1 ">
+                        <i class='far fa-id-badge' style='font-size:24px'></i>
+                        <p class="title mb-0 ml-3 h6">Informacion Cargo</p>
+                        <button type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="true"
+                            class="btn btn-outline-secondary px-1 py-1 ml-auto" id="btn_edit_perf_lab"><i
+                                class="material-icons">edit</i></button>
+                    </header>
+                    <div class="filter-content p-4 collapse show row" id="collapse2">
+
+
+                        <br>
+                        <div class="col-6">
+                            <h5 class="mt-3">Lugar</h5>
+                            <small class="text-muted">ubicacion.</small><br />
+                            <h5 class="mt-3">00/00/0000</h5>
+                            <small class="text-muted">Fecha.</small><br />
+                        </div>
+                        <div class="col-6 ">
+                            <h5 class="card-subtitle mb-0 d-flex justify-content-around">2/6
+                                <small id="Postulantes" class="ml-2 text-muted">Postulantes</small>
+                                <button type="button" data-toggle="collapse" class="btn btn-warning mt-3  "
+                                    id="btn_postulantes">Postulantes</button>
+                            </h5>
+
+                            <br>
+                            <h5 class="card-subtitle mb-0 d-flex justify-content-around">1/6:
+                                <small id="Aceptados" class="ml-2 text-muted">Aceptados</small>
+                                <button type="button" data-toggle="collapse" class="btn btn-warning mt-3"
+                                    id="btn_aceptados">Aceptados</button>
+                            </h5>
+                        </div>
+                        <div class="col-12">
+                            <h5>Descripción del cargo</h5><br />
+                            <small class="text-muted">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquet malesuada
+                                feugiat. Curabitur fermentum bibendum nulla, non dictum ipsum tincidunt non. Quisque
+                                convallis pharetra tempor. Donec id pretium leo. Pellentesque luctus massa non elit
+                                viverra pellentesque. Cras vitae neque molestie, rhoncus ipsum sit amet, lobortis dui.
+                                Fusce in urna sem. <br />
+                                Etiam nisi turpis, eleifend nec tellus id, efficitur pellentesque dolor. Proin vitae
+                                massa a augue sagittis vulputate. Duis vel fringilla magna, sit amet vestibulum enim.
+                                Fusce laoreet accumsan nisl eu sagittis. Morbi hendrerit sapien eget efficitur
+                                imperdiet. Aenean vitae nisl id est placerat congue a et nisi.
+                            </small>
+                            <br>
+                            <button type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="true"
+                                class="btn btn-warning mt-3" id="btn_completar_pers_info">Completar</button>
+                        </div>
+                        <!-- collapse  -->
+                    </div>
+                    <div class="filter-header collapse" id="collapse2">
+                        <form action="" class="formulario1">
+                            <!-- descripcion_form  -->
+                            <div class="form-group mt-3 mb-2">
+                                <label for="descripcion_vac">Describe brevemente el cargo :</label>
+                                <textarea class="form-control noresize h-25" id="descripcion_lab"></textarea>
+                            </div>
+                            <!-- Lugar_form  -->
+                            <div class="form-group w-75 mt-3 mb-2">
+                                <label for="yexp">Lugar <small class="text-muted">(sitio dinde se realiza la
+                                        tarea)</small></label>
+                                <input type="number" class="form-control" name="yexp" id="lugar_form" value="0">
+                            </div>
+                            <!-- fecha_form  -->
+                            <div class="form-group w-75 mt-3 mb-2">
+                                <label for="yexp">Fecha <small class="text-muted">(fecha en la que se realiza la
+                                        tarea)</small></label>
+                                <input type="number" class="form-control" name="yexp" id="fecha_form" value="0">
+                            </div>
+                            <!-- duracion_form  -->
+                            <div class="form-group w-75 mt-3 mb-2">
+                                <label for="yexp">duracion <small class="text-muted">(tiempo que se deseñpeñara el
+                                        cargo)</small></label>
+                                <input type="number" class="form-control" name="yexp" id="duracion_form" value="0">
+                            </div>
+                            <!-- postulantes_form  -->
+                            <div class="form-group w-75 mt-3 mb-2">
+                                <label for="yexp">No. vacantes <small class="text-muted">(numero de vacantes para el
+                                        cargo)</small></label>
+                                <input type="number" class="form-control" name="yexp" id="postulantes_form" value="0">
+                            </div>
+                            <button type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="true"
+                                class="btn btn-warning mt-3 d-flex" id="btn_completar_pers_info"><i
+                                    class='far fa-save mr-2' style='font-size:24px'></i><strong>Guardar
+                                    información</strong></button>
+                        </form>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</div>

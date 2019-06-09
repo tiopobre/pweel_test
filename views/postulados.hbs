@@ -1,0 +1,155 @@
+<!-- Contenido -->
+<div class="container">
+    <div class="row mt-3 mb-5 mx-5">
+        <!-- Breadcrumb -->
+        <div class="col-12 pl-0">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb arr-right">
+                    <li class="breadcrumb-item" aria-current="page"><strong>Mis vacante</strong></li>
+                    <li class="breadcrumb-item" aria-current="page" id="num-vacante"><strong>Vacante No. #</strong></li>
+                    <li class="breadcrumb-item active" aria-current="page"><strong>Postulados</strong></li>
+                </ol>
+            </nav>
+        </div>
+        <!-- Content -->
+        <!-- Lista de postulados -->
+        <div class="col-lg-6 pl-0 pr-0 pr-lg-3">
+            <h4 class="mb-1">Nombre de la vacante</h4>
+            <hr class="mt-0 mb-1">
+            <div class="d-flex justify-content-between">
+                <h5 class="text-muted">Lista de postulantes</h5>
+                <h6 class="text-muted mt-1 mb-0"><label for="psotcont" id="postcont">1 de 10</label></h6>
+            </div>
+            <div class="lista scrollbar-ripe-malinka border border-secondary">
+                <ul class="list-group p-0" id="postulado">
+                    <li class="list-group-item rounded-0 p-0" style="background-color: rgba(0,0,0,0)">
+                        <div class="d-lg-inline-flex justify-content-start py-1 py-1 px-4 w-100 d-none "
+                            style="background-color: white">
+                            <div class="avatar-preview1">
+                                <div id="imagePreview" style="background-image: url(imgs/perfil.jpg);"></div>
+                            </div>
+                            <div class="datos-postulante px-3">
+                                <p class="mb-0"><small class="text-muted">ID del postulante</small></p>
+                                <h5>Nombre postulante</h5>
+                                <p class="card-subtitle mb-0 text-muted"><strong>Ciudad:</strong><label
+                                        id="lugar_vacante" class="ml-2">Nombre ciudad</label></p>
+                            </div>
+                            <button type="button" data-toggle="collapse" data-target="#collapse_postulado_num"
+                                aria-expanded="true" class="btn px-1 py-1 ml-auto" id="btn_seecv"><i
+                                    class='fas fas fa-angle-double-right'
+                                    style='font-size:32px;color:orange'></i></button>
+                        </div>
+
+                        <div class="d-lg-none d-inline-flex justify-content-start py-1 py-1 px-4 ">
+
+                            <button type="button" data-toggle="collapse" data-target="#collapse_postulado_num"
+                                aria-expanded="true" class="btn px-1 py-1 ml-auto" id="btn_seecv">
+                                <div class="avatar-preview1">
+                                    <div id="imagePreview" style="background-image: url(imgs/perfil.jpg);"></div>
+                                </div>
+                            </button>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <!-- CV postulado -->
+        <div class="col-lg-6 border border-secondary p-0 cv-space">
+            <div class="cv scrollbar-ripe-malinka collapse " id="collapse_postulado_num">
+                <div class="d-flex justify-content-center align-items-center py-3 ">
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider2 round"></span>
+                    </label>
+                    <div class="avatar-preview">
+                        <div id="imagePreview" style="background-image: url(imgs/perfil.jpg);">
+                        </div>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="list-group filter-wrap">
+                    <!-- Info personal -->
+                    <article class="list-group-item p-0">
+                        <header
+                            class="filter-header d-flex justify-content-start align-items-center px-3 py-1 border border-light rounded-top border-right-0 border-left-0 border-top-0">
+                            <i class='far fa-address-card' style='font-size:24px'></i>
+                            <p class="title mb-0 ml-2 h6">Informacion personal</p>
+                            <button type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="true"
+                                class="btn px-1 py-1 ml-auto" id="btn_seeinfo"><i class='fas fas fa-angle-down'
+                                    style='font-size:32px;color:gray'></i></button>
+                        </header>
+                        <div class="vp-info filter-content p-4 collapse show" id="collapse1">
+                            <small class="text-muted">Nombre completo</small>
+                            <h4 id="fullname">David Santiago Reina Rojas</h4>
+                            <small class="text-muted">Teléfono de contacto</small>
+                            <h4 id="cel">+57 3125154722</h4>
+                        </div>
+                        <div class="info filter-content p-4 collapse" id="collapse1">
+                            <p class="card-subtitle mb-0"><strong>Nombres:</strong><label id="infNombres"
+                                    class="ml-2">David Santiago</label></p>
+                            <p class="card-subtitle mb-0"><strong>Apellidos:</strong><label id="infApellidos"
+                                    class="ml-2">Reina Rojas</label></p>
+                            <p class="card-subtitle mb-0"><strong>No. Identificación:</strong><label id="indID"
+                                    class="ml-2">C.C. 1020827649</label></p>
+                            <p class="card-subtitle mb-0"><strong>Edad:</strong><label id="infEdad" class="ml-2">21
+                                    años</label></p>
+                            <p class="card-subtitle mb-0"><strong>Fecha de nacimiento:</strong><label id="infFechanaci"
+                                    class="ml-2">30/08/1997</label></p>
+                            <p class="card-subtitle mb-0"><strong>Genero:</strong><label id="infGenero"
+                                    class="ml-2">Masculino</label></p>
+                            <p class="card-subtitle mb-0"><strong>Estado civil:</strong><label id="infEstado"
+                                    class="ml-2">Soltero</label></p>
+                            <p class="card-subtitle mb-0"><strong>Ciudad de residencia:</strong><label id="infCiudad"
+                                    class="ml-2">Bogotá</label></p>
+                            <p class="card-subtitle mb-0"><strong>Dirección:</strong><label id="infDireccion"
+                                    class="ml-2">Cra 73B #8-74</label></p>
+                            <p class="card-subtitle mb-0"><strong>Ciudad de nacimiento:</strong><label
+                                    id="infCiudadNatal" class="ml-2">Bogotá</label></p>
+                            <p class="card-subtitle mb-0"><strong>Telefono principal:</strong><label id="infMovil"
+                                    class="ml-2">3125154722</label></p>
+                            <p class="card-subtitle mb-0"><strong>Relefono secundario:</strong><label id="ingFijo"
+                                    class="ml-2">8126555</label></p>
+                            <p class="card-subtitle mb-0"><strong>E-mail:</strong><label id="infoEmail"
+                                    class="ml-2">u1201730@unimilitar.edu.co</label></p>
+                        </div>
+                    </article>
+                    <!-- Perfil laboral -->
+                    <article class="list-group-item p-0">
+                        <header class="filter-header d-flex justify-content-start align-items-center px-3 py-1 ">
+                            <i class='far fa-id-badge' style='font-size:24px'></i>
+                            <p class="title mb-0 ml-3 h6">Perfil laboral</p>
+                            <button type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="true"
+                                class="btn px-1 py-1 ml-auto" id="btn_seelabinfo"><i class='fas fas fa-angle-down'
+                                    style='font-size:32px;color:gray'></i></button>
+                        </header>
+                        <div class="vp-laboral filter-content p-4 collapse show" id="collapse2">
+                            <h5>Descripción de su perfil laboral</h5>
+                            <small class="text-muted" id="labDescrip">Soy un joven emprendedor y listo par alo que se
+                                venga :v.</small>
+
+                        </div>
+                        <div class="laboral filter-header p-4 collapse" id="collapse2">
+                            <form action="" class="formulario1">
+                                <p class="card-subtitle mb-0"><strong>Años de experiencia:</strong><label id="labAnos"
+                                        class="ml-2">2</label></p>
+                                <p class="card-subtitle mb-0"><strong>Su descripción:</strong></p>
+                                <label id="infoEmail" class="ml-2">Soy un joven emprendedor y listo par alo que se venga
+                                    :v.</label>
+                                <p class="card-subtitle mb-0"><strong>Trabajos:</strong></p>
+                                <div class="d-flex border border-secondary rounded p-3">
+                                    <span class="badge badge-secondary d-flex align-items-center py-0 mr-2">Ejemplo
+                                        <button class="btn p-0 ml-1 text-light">x</button></span>
+                                </div>
+                            </form>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

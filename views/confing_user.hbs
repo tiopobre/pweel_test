@@ -1,0 +1,206 @@
+<!-- Contenido -->
+<div class="container">
+    <div class="row mt-3 mb-5 mx-5">
+        <!--- Breadcrumb --->
+        <div class="col-12 pl-0">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb arr-right">
+                    <li class="breadcrumb-item" aria-current="page"><strong>Inicio</strong></li>
+                    <li class="breadcrumb-item" aria-current="page"><strong>Hoja de vida</strong></li>
+                    <li class="breadcrumb-item active" aria-current="page"><strong>Configuración de la cuenta</strong>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+
+        <!--- Porcentaje --->
+        <div class="colp col-md-4 bg-white mr-lg-3 d-lg-none d-none d-lg-block d-xl-block py-4 px-5" align="center">
+
+
+        </div>
+        <div class="vl mx-3 d-lg-none d-none d-lg-block d-xl-block"></div>
+        <!-- Formulario -->
+        <div class="col-lg-7 col-md-12 ml-md-0 ml-lg-3 p-0" style="background: rgb(250,250,250)">
+            <div class="list-group filter-wrap">
+                <!-- Perfil -->
+                <article class="list-group-item p-0">
+                    <header
+                        class="filter-header d-flex justify-content-start align-items-center px-3 py-2 border border-light rounded-top border-right-0 border-left-0 border-top-0">
+                        <i class='far fa-address-card' style='font-size:24px'></i>
+                        <p class="title mb-0 ml-2 h5">Perfil</p>
+
+                    </header>
+                    <div class="filter-content p-4">
+                        <div class="list-group filter-wrap">
+                            <article class="list-group-item p-0">
+                                <div class="filter-header">
+                                    <h5>Cambiar contraseña</h5>
+                                    <p class="text-muted">Elige una nueva contraseña que tenga entre 6 y 15 caracteres.
+                                    </p>
+                                    <button type="button" data-toggle="collapse" data-target="#collapse_contrasena"
+                                        aria-expanded="true" class="menu-edit btn px-1 py-1 ml-auto"
+                                        id="btn_edit_contrasena"><i class="material-icons">edit</i></button>
+                                </div>
+                                <div class="filter-content collapse" id="collapse_contrasena">
+                                    <form action="" class="formulario1">
+                                        <h5 class="mt-4">Edita tu contraseña</h5>
+                                        <div class="form-group w-75 mb-2">
+                                            <label for="pass">Anterior contraseña</label>
+                                            <input type="password" class="form-control" name="pass" id="pass">
+                                        </div>
+                                        <div class="form-group w-75 mb-2">
+                                            <label for="newpass">Nueva contraseña</label>
+                                            <input type="password" class="form-control" name="newpass" id="newpass">
+                                        </div>
+                                        <button type="button" data-toggle="collapse" data-target="#collapse_contrasena"
+                                            aria-expanded="true" class="btn btn-warning mt-3 mb-2 d-flex"
+                                            id="btn_cambiar_contrasena"><i class="fa fa-lock mr-2"
+                                                style="font-size:24px"></i><strong>Cambiar contraseña</strong></button>
+                                    </form>
+                                </div>
+                            </article>
+                            <article class="list-group-item p-0 mt-3">
+                                <div class="filter-header">
+                                    <h5>Segunda cuenta de correo</h5>
+                                    <p class="text-muted">Registra un correo alterno para recibir notificaciones en caso
+                                        de<br /> presentar problemas con tu correo principal.</p>
+                                    <button type="button" data-toggle="collapse" data-target="#collapse_segundocorreo"
+                                        aria-expanded="true" class="menu-edit btn px-1 py-1 ml-auto"
+                                        id="btn_edit_segcorreo"><i class="material-icons">edit</i></button>
+                                </div>
+                                <div class="filter-content collapse" id="collapse_segundocorreo">
+                                    <form action="" class="formulario1">
+                                        <h5 class="mt-4">Agrega tu segundo correo</h5>
+                                        <div class="form-group w-75 mb-2">
+                                            <label for="segpass">Correo electrónico</label>
+                                            <input type="password" class="form-control" name="segpass" id="segpass">
+                                        </div>
+                                        <button type="button" data-toggle="collapse"
+                                            data-target="#collapse_segundocorreo" aria-expanded="true"
+                                            class="btn btn-warning mt-3 d-flex" id="btn_add_seg_email"><i
+                                                class='far fa-save mr-2' style='font-size:24px'></i><strong>Guardar
+                                                correo</strong></button>
+                                    </form>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </article>
+                <article class="list-group-item p-0">
+                    <header
+                        class="filter-header d-flex justify-content-start align-items-center px-3 py-2 border border-light rounded-top border-right-0 border-left-0 border-top-0 mt-5">
+                        <i class="fa fa-gear" style="font-size:24px"></i>
+                        <p class="title mb-0 ml-2 h5">Configuración</p>
+
+                    </header>
+                    <div class="filter-content p-4">
+                        <div class="list-group filter-wrap">
+                            <article class="list-group-item p-0">
+                                <div class="filter-header">
+                                    <h5>Ocultar hoja de vida</h5>
+                                    <p class="text-muted">Escoge quién puede ver tu hoja de vida en PWEEL.com.</p>
+                                    <button type="button" data-toggle="collapse" data-target="#collapse_hidecv"
+                                        aria-expanded="true" class="menu-edit btn px-1 py-1 ml-auto"
+                                        id="btn_edit_hide_cv"><i class="material-icons">edit</i></button>
+                                </div>
+                                <div class="filter-content collapse" id="collapse_hidecv">
+                                    <form action="" class="formulario1">
+                                        <h5 class="mt-4">Editando configuración general</h5>
+                                        <div class="form-group w-75 mb-2">
+                                            <label for="gender">¿Quieres ocultar tu hoja de vida?</label><br />
+                                            <div class="btn-group" data-toggle="buttons">
+                                                <label class="btn btn-outline-secondary">
+                                                    <input type="radio" name="gener" id="woman" class="inp">Si
+                                                </label>
+                                                <label class="btn btn-outline-secondary">
+                                                    <input type="radio" name="gener" id="men" class="inp">No
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <button type="button" data-toggle="collapse" data-target="#collapse_hidecv"
+                                            aria-expanded="true" class="btn btn-warning mt-3 d-flex" id="btn_hidecv"><i
+                                                class='far fa-save mr-2' style='font-size:24px'></i><strong>Guardar
+                                                información</strong></button>
+                                    </form>
+                                </div>
+                            </article>
+                            <article class="list-group-item p-0 mt-3">
+                                <div class="filter-header">
+                                    <h5>Eliminar cuenta</h5>
+                                    <p class="text-muted">Escoge si quieres cerrar tu cuenta en PWEEL.com.</p>
+                                    <button type="button" data-toggle="collapse" data-target="#collapse_elimperf"
+                                        aria-expanded="true" class="menu-edit btn px-1 py-1 ml-auto"
+                                        id="btn_edit_elim_perf"><i class="material-icons">edit</i></button>
+                                </div>
+                                <div class="filter-content collapse" id="collapse_elimperf">
+                                    <form action="" class="formulario1">
+                                        <h5 class="mt-4">¿Seguro deseas eliminar tu cuenta?</h5>
+                                        <p>¿Estás seguro de que quieres eliminar tu cuenta? <strong>Perderás:</strong>
+                                        </p>
+                                        <ul style="color: coral">
+                                            <li class="text-left"><span style="color: black">Para aplicar a miles de
+                                                    empleos.</span></li>
+                                            <li class="text-left"><span style="color: black">Por la seguridad sin
+                                                    existencia de contratos.</span></li>
+                                            <li class="text-left"><span style="color: black">Encontrar trabajo rapido
+                                                    para periodos cortos o largos.</span></li>
+                                        </ul>
+                                        <button type="button" data-toggle="collapse" data-target="#collapse_elimperf"
+                                            aria-expanded="true" class="btn btn-warning mt-3 d-flex"
+                                            id="btn_elimperf"><i class='far fa-save mr-2'
+                                                style='font-size:24px'></i><strong>Eliminar cuenta</strong></button>
+                                    </form>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </article>
+                <article class="list-group-item p-0">
+                    <header
+                        class="filter-header d-flex justify-content-start align-items-center px-3 py-2 border border-light rounded-top border-right-0 border-left-0 border-top-0 mt-5">
+                        <i class="fa fa-lock" style="font-size:24px"></i>
+                        <p class="title mb-0 ml-2 h5">Privacidad</p>
+
+                    </header>
+                    <div class="filter-content p-4">
+                        <div class="list-group filter-wrap">
+                            <article class="list-group-item p-0">
+                                <div class="filter-header">
+                                    <h5>Comunicaciones</h5>
+                                    <p class="text-muted">Cuéntanos qué tipo de mensajes quieres recibir.</p>
+                                    <button type="button" data-toggle="collapse" data-target="#collapse_comunic"
+                                        aria-expanded="true" class="menu-edit btn px-1 py-1 ml-auto"
+                                        id="btn_edit_comunic"><i class="material-icons">edit</i></button>
+                                </div>
+                                <div class="filter-content collapse" id="collapse_comunic">
+                                    <form action="" class="formulario1">
+                                        <h5 class="mt-4">Editando tus preferencias</h5>
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="Check_pref1">
+                                            <label class="form-check-label" for="Check_pref1">Recibir correos
+                                                electrónicos con ofertas de empleo</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="Check_pref1">
+                                            <label class="form-check-label" for="Check_pref1">Suscribirse a mensajes de
+                                                nuestros aliados</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="Check_pref1">
+                                            <label class="form-check-label" for="Check_pref1">Recibir noticias,
+                                                promociones y servicios de PWEEL.com</label>
+                                        </div>
+                                        <button type="button" data-toggle="collapse" data-target="#collapse_comunic"
+                                            aria-expanded="true" class="btn btn-warning mt-3 d-flex"
+                                            id="btn_save_prefers"><i class='far fa-save mr-2'
+                                                style='font-size:24px'></i><strong>Guardar información</strong></button>
+                                    </form>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</div>

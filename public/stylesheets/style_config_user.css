@@ -1,0 +1,142 @@
+html {
+    background: url(../imgs/Fondo-registro.jpg);
+}
+
+body {
+    background: rgba(0, 0, 0, 0);
+}
+
+.navbar {
+    background: rgba(0, 0, 0, 1);
+}
+
+.breadcrumb {
+    background: rgba(0, 0, 0, 0);
+    margin-bottom: 0px;
+    padding-bottom: 3px;
+    padding-left: 3px;
+}
+
+.titulo {
+    background: rgba(0, 0, 0, .90);
+    color: #ff7011;
+}
+
+.titulo::after,
+.titulo::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 50%;
+    left: 100%;
+}
+
+.titulo::after {
+    bottom: 0;
+    background: linear-gradient(to right bottom, rgba(0, 0, 0, .90) 50%, transparent 50%);
+}
+
+.titulo::before {
+    top: 0;
+    background: linear-gradient(to right top, rgba(0, 0, 0, .90) 50%, transparent 50%);
+}
+
+.colp {
+    height: 490px;
+}
+
+@media (max-width:1200px) {
+    .colp {
+        height: 550px;
+    }
+}
+
+.raya {
+    margin-top: 3px;
+    border-top: 1px solid coral;
+    height: 3px;
+}
+
+.vl {
+    border-left: 2px solid coral;
+    height: 700px;
+}
+
+.menu-edit {
+    position: absolute;
+    right: 0px;
+    z-index: 1;
+    top: 0px;
+}
+
+.inp{
+    display: none;
+}
+
+.list-group-item{
+    border: none;
+}
+
+.menu-edit:hover{
+    color: gray;
+}
+
+header{
+    background: rgba(0,0,0,.9);
+    color: aliceblue;
+}
+
+.arr-right .breadcrumb-item + .breadcrumb-item::before {
+
+    content: "›";
+
+    vertical-align: top;
+
+    color: grey;
+
+    font-size: 35px;
+
+    line-height: 18px;
+
+}
+
+.formulario1{
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 1px;
+    padding-bottom: 20px;
+    background: rgba(0,0,0,.08);
+    border: 2px dotted rgba(0,0,0,.5);
+}
+
+.noresize {
+  resize: none;
+ 
+}
+
+footer {
+    position: relative;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: rgb(9, 9, 9);
+    text-align: left;
+    color: gray
+}
+
+.fter {
+    padding-top: 20px;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-bottom: 50px;
+}
+
+@media (max-width: 770px) {
+    .fter {
+        padding-top: 2px;
+        margin-left: 1%;
+        margin-right: 1%;
+        margin-bottom: 0px;
+    }
+}

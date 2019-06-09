@@ -1,0 +1,92 @@
+html {
+    /*background: url(../imgs/Fondo-registro.jpg);*/ 
+}
+
+body {
+    background: rgba(0, 0, 0, 0);
+}
+
+.navbar {
+    background: rgba(0, 0, 0, 1);
+}
+
+
+footer {
+    position: relative;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: whitesmoke;
+    text-align: left;
+    color: gray
+}
+
+.fter {
+    padding-top: 20px;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-bottom: 50px;
+}
+
+@media (max-width: 770px) {
+    .fter {
+        padding-top: 2px;
+        margin-left: 1%;
+        margin-right: 1%;
+        margin-bottom: 0px;
+    }
+}
+
+.menu{
+    background:  rgba(15,15,15,.88);
+    padding-top: 10px;
+}
+
+.tabss{
+    border: 1px solid rgba(100,100,100,.7);
+    border-top-right-radius: 8% 15%;
+    border-top-left-radius: 8% 15%;
+}
+
+.pestana a{
+    color: white !important;
+}
+
+.tabss .active{
+    background:  coral !important;
+    border-top-right-radius: 8% 15%;
+    border-top-left-radius: 8% 15%;
+}
+
+.menu-edit {
+    position: absolute;
+    right: 30px;
+    z-index: 1;
+    top: 55px;
+}
+
+.page-link{
+    color: rgba(0,0,0,.8);
+}
+
+.page-item.active .page-link {
+ 
+  z-index: 1;
+ 
+  color: #fff;
+ 
+  background-color: black;
+ 
+  border-color: black;
+ 
+}
+
+#img_recargar{
+    height: 100px;
+    width: 100epx;
+}
+
+.btn_ex{
+    height: 2em !important;
+}

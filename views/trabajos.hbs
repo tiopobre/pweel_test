@@ -1,0 +1,178 @@
+<!-- Tabs de navegacion -->
+<ul class="nav nav-tabs menu justify-content-center">
+    <li class="nav-item tabss pestana">
+        <a href="#tab1" class="nav-link  active" data-toggle="tab">Vacantes</a>
+    </li>
+    <li class="nav-item tabss pestana">
+        <a href="#tab2" class="nav-link " data-toggle="tab">Sugeridos</a>
+    </li>
+    <li class="nav-item tabss pestana">
+        <a href="#tab3" class="nav-link " data-toggle="tab">Express</a>
+    </li>
+    <li class="nav-item tabss pestana">
+        <a href="#tab4" class="nav-link " data-toggle="tab">Mis Solicitudes</a>
+    </li>
+    <li class="nav-item tabss pestana">
+        <a href="#tab5" class="nav-link " data-toggle="tab">Confirmados</a>
+    </li>
+</ul>
+<div class="container ">
+    <div class="row mt-3">
+        <!---Contenido de las Tabs--->
+        <div class="col-12 tab-content ">
+            <!---Vacantes--->
+            <div class="tab-pane active" id="tab1" role="tabpanel">
+                <!-- Search form -->
+                <form class="form-inline justify-content-center">
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                    <input class="form-control form-control-sm w-50 ml-3" type="text" placeholder="Buscar"
+                        aria-label="Search">
+                </form>
+                <hr class="w-75">
+                <div class="card-list d-flex flex-column flex-lg-row" id="lista_vacantes row">
+                    <!-- Lista de vacantes -->
+                    <div class="col-12 col-lg-6 p-0" id="columna1">
+                        {{# each vacantes1}}
+                        {{> card_vacante}}
+                        {{/each}}
+                    </div>
+                    <div class="col-12 col-lg-6 p-0" id="columna2">
+
+                        {{# each vacantes2}}
+                        {{> card_vacante}}
+                        {{/each}}
+                    </div>
+
+                </div>
+                <hr class="w-75">
+                <nav>
+                    <ul class="pagination pg-dark d-flex justify-content-center">
+                        <li class="page-item disabled">
+                            <span class="page-link" aria-hidden="true">« Anterior</span>
+                        </li>
+                        <li class="page-item active">
+                            <a href="#" class="page-link">1</a>
+                        </li>
+                        <li class="page-item">
+                            <a href="#" class="page-link">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a href="#" class="page-link">3</a>
+                        </li>
+                        <li class="page-item">
+                            <a href="#" class="page-link">4</a>
+                        </li>
+                        <li class="page-item">
+                            <a href="#" class="page-link">5</a>
+                        </li>
+                        <li class="page-item">
+                            <a href="#" class="page-link">
+                                <span aria-hidden="true">Siguiente » </span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!---Sugeridos--->
+            <div class="tab-pane" id="tab2" role="tabpanel">
+                <!-- Search form -->
+                <form class="form-inline justify-content-center">
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                    <input class="form-control form-control-sm w-50 ml-3" type="text" placeholder="Buscar"
+                        aria-label="Search">
+                </form>
+                <hr class="w-75">
+                <div class="card-list d-flex flex-column flex-md-row" id="lista_vacantes row">
+                    <!-- Lista de vacantes -->
+                    <div class="col-12 col-md-6 p-0 " id="columna1">
+                        {{# each vacantes1}}
+                        {{> card_vacante}}
+                        {{/each}}
+
+                    </div>
+                    <div class="col-12 col-md-6 p-0" id="columna2">
+                        {{# each vacantes2}}
+                        {{> card_vacante}}
+                        {{/each}}
+                    </div>
+
+                </div>
+
+                <hr class="w-75">
+                <nav>
+                    <ul class="pagination pg-dark d-flex justify-content-center">
+                        <li class="page-item disabled">
+                            <span class="page-link" aria-hidden="true">« Anterior</span>
+                        </li>
+                        <li class="page-item active">
+                            <a href="#" class="page-link">1</a>
+                        </li>
+                        <li class="page-item">
+                            <a href="#" class="page-link">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a href="#" class="page-link">3</a>
+                        </li>
+                        <li class="page-item">
+                            <a href="#" class="page-link">4</a>
+                        </li>
+                        <li class="page-item">
+                            <a href="#" class="page-link">5</a>
+                        </li>
+                        <li class="page-item">
+                            <a href="#" class="page-link">
+                                <span aria-hidden="true">Siguiente » </span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!--- Pestaña Express--->
+            <div class="tab-pane" id="tab3" role="tabpanel">
+                {{> card_vacante_express }}
+            </div>
+
+            <!---Mis solicitudes--->
+            <div class="tab-pane" id="tab4" role="tabpanel">
+                   <hr class="w-75">
+                <div class="card-list d-flex flex-column flex-md-row" id="lista_vacantes row">
+                    <!-- Lista de vacantes -->
+                    <div class="col-12 col-md-6 p-0 " id="columna1">
+                        {{# each vacantes1}}
+                        {{> card_mis_postulaciones}}
+                        {{/each}}
+
+                    </div>
+                    <div class="col-12 col-md-6 p-0" id="columna2">
+                        {{# each vacantes2}}
+                        {{> card_mis_postulaciones}}
+                        {{/each}}
+                    </div>
+
+                </div>
+                <hr class="w-75">                
+            </div>
+
+            <!---Pestaña5--->
+            <div class="tab-pane" id="tab5" role="tabpanel">
+                <hr class="w-75">
+                <div class="card-list d-flex flex-column flex-md-row" id="lista_vacantes row">
+                    <!-- Lista de vacantes -->
+                    <div class="col-12 col-md-6 p-0 " id="columna1">
+                        {{# each vacantes1}}
+                        {{> card_mis_postulaciones}}
+                        {{/each}}
+
+                    </div>
+                    <div class="col-12 col-md-6 p-0" id="columna2">
+                        {{# each vacantes2}}
+                        {{> card_mis_postulaciones}}
+                        {{/each}}
+                    </div>
+
+                </div>
+                <hr class="w-75">
+            </div>
+        </div>
+    </div>
+</div>

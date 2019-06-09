@@ -1,0 +1,165 @@
+    <!--- Tabs de navegacion -->
+    <ul class="nav nav-tabs menu justify-content-center">
+        <li class="nav-item tabss pestana">
+            <a href="#tab1" class="nav-link  active" data-toggle="tab">Mis Vacantes</a>
+        </li>
+        <li class="nav-item tabss pestana">
+            <a href="#tab2" class="nav-link " data-toggle="tab">En progreso</a>
+        </li> 
+    </ul>
+    <div class="container ">
+        <div class="row mt-3">
+            <!---Contenido de las Tabs--->
+            <div class="col-12 tab-content ">
+                <!---Vacantes--->
+                <div class="tab-pane active" id="tab1" role="tabpanel">
+                    <!-- Search form -->
+                    <form class="form-inline justify-content-center">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                        <input class="form-control form-control-sm w-50 ml-3" type="text" placeholder="Buscar" aria-label="Search">
+                    </form>
+                    <hr class="w-75">
+                    <div class="card-list d-flex flex-column flex-lg-row" id="lista_vacantes row">
+                <!-- Lista de vacantes -->
+                        <div class="col-12 col-lg-6 p-0" id="columna1">
+                           <h1> fsadfsadf: 4</h1>
+                            {{# each vacantes1}}
+                            {{> card_vacante2}}
+                            {{/each}}                          
+                        </div>
+                        <div class="col-12 col-lg-6 p-0" id="columna2">
+                           <h1> fsadfsadf: {{doctam}}</h1>
+                           {{# each vacantes2}}
+                            {{> card_vacante2}}
+                            {{/each}}                       
+                        </div>
+                    </div>
+
+                    <hr class="w-75">
+                    <nav>
+                        <ul class="pagination pg-dark d-flex justify-content-center">
+                            <li class="page-item disabled">
+                                <span class="page-link" aria-hidden="true">« Anterior</span>
+                            </li>
+                            <li class="page-item active">
+                                <a href="#" class="page-link">1</a>
+                            </li>
+                            <li class="page-item">
+                                <a href="#" class="page-link">2</a>
+                            </li>
+                            <li class="page-item">
+                                <a href="#" class="page-link">3</a>
+                            </li>
+                            <li class="page-item">
+                                <a href="#" class="page-link">4</a>
+                            </li>
+                            <li class="page-item">
+                                <a href="#" class="page-link">5</a>
+                            </li>
+                            <li class="page-item">
+                                <a href="#" class="page-link">
+                                    <span aria-hidden="true">Siguiente » </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+    <!---En progreso--->
+                <div class="tab-pane" id="tab2" role="tabpanel">
+                    <!-- Search form -->
+                    <form class="form-inline justify-content-center">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                        <input class="form-control form-control-sm w-50 ml-3" type="text" placeholder="Buscar" aria-label="Search">
+                    </form>
+                    <hr class="w-75">
+                    <div class="card-list d-flex flex-column flex-md-row" id="lista_vacantes row">
+                        <!-- Lista de vacantes -->
+                        <div class="col-12 col-md-6 p-0 " id="columna1">
+                            <!--Card-->
+                            <div class="card col-12" id="cargo_vacante_card_2">
+                                    <div class="card-body">
+                                        <p class="mb-0">
+                                            <label for="id_vacante"><small class="text-muted">ID vacante</small></label>
+                                            
+                                        </p>
+                                        <h3 class="card-title">Cargo Vacante</h3>
+                                        <h6 class="card-subtitle mb-0 text-muted"><strong>Ubicación:</strong><label id="lugar_vacante" class="ml-2">Lugar</label></h6>
+                                        <h6 class="card-subtitle mb-2 text-muted"><strong>Fecha:</strong><label id="fecha_tarea" class="ml-2">Fecha de la tarea</label></h6>
+                                        <h6 class="card-subtitle mb-0 text-muted"><strong>Puestos:</strong><label id="Postulantes" class="ml-2">3</label></h6>
+                                        
+                                        
+                                        <button type="button" data-toggle="collapse" data-target="#collapse_vacante_1" aria-expanded="true" class="menu-edit btn px-1 py-1 ml-auto" id="btn_seemore_1"><i class='fas fa-angle-down' style='font-size:32px'></i></button>
+                                    </div>
+                                    <div class="collapse px-4" id="collapse_vacante_1">
+                                        <hr class="mt-0">
+                                        <small class="text-muted"><label for="descripción_vacante" id="descripción_vacante">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquet malesuada feugiat. Curabitur fermentum bibendum nulla, non dictum ipsum tincidunt non. Quisque convallis pharetra tempor. Donec id pretium leo. Pellentesque luctus massa non elit viverra pellentesque. Cras vitae neque molestie, rhoncus ipsum sit amet, lobortis dui. Fusce in urna sem. <br />
+                                                Etiam nisi turpis, eleifend nec tellus id, efficitur pellentesque dolor. Proin vitae massa a augue sagittis vulputate. Duis vel fringilla magna, sit amet vestibulum enim. Fusce laoreet accumsan nisl eu sagittis. Morbi hendrerit sapien eget efficitur imperdiet. Aenean vitae nisl id est placerat congue a et nisi.
+                                            </label></small>
+                                        <h6 class="card-subtitle py-2 mb-2 text-muted"><strong>Duración:</strong><label id="duracion_vacante" class="ml-2">Tiempo</label></h6>
+                                        <button type="button" class="btn btn-warning mb-4 btn-block" id="btn_postulantes_2"><strong>Ver Puestos</strong></button>
+                                    </div>
+                            </div>  
+                        </div>
+                        <!--Card-->
+                        <div class="card col-12" id="cargo_vacante_card_2">
+                                <div class="card-body">
+                                    <p class="mb-0">
+                                        <label for="id_vacante"><small class="text-muted">ID vacante</small></label>
+                                        
+                                    </p>
+                                    <h3 class="card-title">Cargo Vacante</h3>
+                                    <h6 class="card-subtitle mb-0 text-muted"><strong>Ubicación:</strong><label id="lugar_vacante" class="ml-2">Lugar</label></h6>
+                                    <h6 class="card-subtitle mb-2 text-muted"><strong>Fecha:</strong><label id="fecha_tarea" class="ml-2">Fecha de la tarea</label></h6>
+                                    <h6 class="card-subtitle mb-0 text-muted"><strong>Puestos:</strong><label id="Postulantes" class="ml-2">5</label></h6>
+                                    
+                                    
+                                    <button type="button" data-toggle="collapse" data-target="#collapse_vacante_1" aria-expanded="true" class="menu-edit btn px-1 py-1 ml-auto" id="btn_seemore_1"><i class='fas fa-angle-down' style='font-size:32px'></i></button>
+                                </div>
+                                <div class="collapse px-4" id="collapse_vacante_1">
+                                    <hr class="mt-0">
+                                    <small class="text-muted"><label for="descripción_vacante" id="descripción_vacante">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquet malesuada feugiat. Curabitur fermentum bibendum nulla, non dictum ipsum tincidunt non. Quisque convallis pharetra tempor. Donec id pretium leo. Pellentesque luctus massa non elit viverra pellentesque. Cras vitae neque molestie, rhoncus ipsum sit amet, lobortis dui. Fusce in urna sem. <br />
+                                            Etiam nisi turpis, eleifend nec tellus id, efficitur pellentesque dolor. Proin vitae massa a augue sagittis vulputate. Duis vel fringilla magna, sit amet vestibulum enim. Fusce laoreet accumsan nisl eu sagittis. Morbi hendrerit sapien eget efficitur imperdiet. Aenean vitae nisl id est placerat congue a et nisi.
+                                        </label></small>
+                                    <h6 class="card-subtitle py-2 mb-2 text-muted"><strong>Duración:</strong><label id="duracion_vacante" class="ml-2">Tiempo</label></h6>
+                                    <button type="button" class="btn btn-warning mb-4 btn-block" id="btn_postulantes_2"><strong>Ver Puestos</strong></button>
+                                </div>
+                        </div>
+
+                    </div>
+
+                    <hr class="w-75">
+                    <nav>
+                        <ul class="pagination pg-dark d-flex justify-content-center">
+                            <li class="page-item disabled">
+                                <span class="page-link" aria-hidden="true">« Anterior</span>
+                            </li>
+                            <li class="page-item active">
+                                <a href="#" class="page-link">1</a>
+                            </li>
+                            <li class="page-item">
+                                <a href="#" class="page-link">2</a>
+                            </li>
+                            <li class="page-item">
+                                <a href="#" class="page-link">3</a>
+                            </li>
+                            <li class="page-item">
+                                <a href="#" class="page-link">4</a>
+                            </li>
+                            <li class="page-item">
+                                <a href="#" class="page-link">5</a>
+                            </li>
+                            <li class="page-item">
+                                <a href="#" class="page-link">
+                                    <span aria-hidden="true">Siguiente » </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+
