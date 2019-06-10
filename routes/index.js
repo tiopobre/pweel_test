@@ -58,7 +58,7 @@ router.get('/trabajos', function (req, res, next) {
             vacantes_pos1: V_pos1,
             vacantes_pos2: V_pos2
     });
-    })
+    });
   
     
 });
