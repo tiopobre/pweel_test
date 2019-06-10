@@ -35,15 +35,16 @@ router.get('/trabajos', function(req, res, next) {
             } else {
                 chunk2.push(docs[i]);
             }
-        }        
-    });
-    //render pag
+        } 
+          //render pag
     res.render('trabajos', {
         title: 'Trabajos | PWEEL',
         style: 'style_trabajos.css',
         vacantes1: chunk1,
         vacantes2: chunk2,
+    });       
     });
+  
     //vacantes postuladas
 });
 
