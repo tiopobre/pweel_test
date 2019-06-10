@@ -15,6 +15,9 @@ var typeID = '';
 var numID = '';
 var email = '';
 
+
+var chunk1 = [];
+var chunk2 = [];
 /* GET home page. */
 router.get('/', function (req, res, next) {
     res.render('home', {
@@ -26,8 +29,7 @@ router.get('/', function (req, res, next) {
 /* Obtener pagina de trabajos. */
 router.get('/trabajos', function (req, res, next) {
     // todas las vacantes
-    var chunk1 = [];
-    var chunk2 = [];
+   
     vacante.find({}, function (err, docs) {
 
         for (var i = 0; i < docs.length; i++) {
@@ -65,8 +67,7 @@ router.get('/trabajos', function (req, res, next) {
 
 /* Obtener pagina de vacantes. */
 router.get('/vacantes', function (req, res, next) {
-    var chunk1 = [];
-    var chunk2 = [];
+
     vacante.find({}, function (err, docs) {    
         for (var i = 0; i < docs.length; i++) {
             if (i % 2 == 0) {
