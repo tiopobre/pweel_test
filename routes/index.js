@@ -24,7 +24,7 @@ router.get('/', function (req, res, next) {
 });
 
 /* Obtener pagina de trabajos. */
-
+json
 router.get('/trabajos', function (req, res, next) {
     // todas las vacantes
 
@@ -38,12 +38,13 @@ router.get('/trabajos', function (req, res, next) {
                 chunk2.push(docs[i]);
             }
         }
-        json = {
+        json1 = {
             title: 'Trabajos | PWEEL',
             style: 'style_trabajos.css',
             vacantes1: chunk1,
             vacantes2: chunk2,
         }
+        json = json1;
     });
     //render pag
     res.render('trabajos', { json });
