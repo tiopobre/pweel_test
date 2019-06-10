@@ -98,8 +98,8 @@ router.get('/vacantes', function (req, res, next) {
             vacantes2: V_chunk2,
             doctam: docs.length,
 
-            vacantes_pos1: V_prop1,
-            vacantes_pos2: V_prop2
+            vacantes_prop1: V_prop1,
+            vacantes_prop2: V_prop2
         });
     });
 });
