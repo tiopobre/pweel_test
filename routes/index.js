@@ -37,9 +37,9 @@ router.get('/trabajos', function (req, res, next) {
 
         for (var i = 0; i < docs.length; i++) {
             if (i % 2 == 0) {
-                chunk1.push(docs[i]);
+                T_chunk1.push(docs[i]);
             } else {
-                chunk2.push(docs[i]);
+                T_chunk2.push(docs[i]);
             }
         }
     });
