@@ -72,10 +72,14 @@ router.get('/trabajos', function (req, res, next) {
 router.get('/vacantes', function (req, res, next) {
 
     //vacantes propias
-
+    var  V_prop1 = [];
+    var  V_prop2 = [];
+    var tamaño_lista_ids
     User.findOne({ 'cuenta.email': email }, function (err, user) {
-    var    V_prop1 = [];
-    var    V_prop2 = [];
+   
+        lista_ids=[];
+        lista_ids = user.vacantes_empleador;
+        tamaño_lista_ids=  lista_ids.length;   
         for (var i = 0; i < vacantes_empleador.length; i++) {
             vacante.findById(user.vacantes_propias[i], function (err, vac) {
                 if (i % 2 == 0) {
@@ -105,6 +109,7 @@ router.get('/vacantes', function (req, res, next) {
             vacantes1: V_chunk1,
             vacantes2: V_chunk2,
             doctam: docs.length,
+            list_tam: tamaño_lista_ids,
 
             vacantes_prop1: V_prop1,
             vacantes_prop2: V_prop2
