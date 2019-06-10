@@ -24,7 +24,7 @@ router.get('/', function (req, res, next) {
 });
 
 /* Obtener pagina de trabajos. */
-json
+var json;
 router.get('/trabajos', function (req, res, next) {
     // todas las vacantes
 
