@@ -4,6 +4,7 @@
             <label for="id_vacante"><small class="text-muted">{{this._id}}</small></label>
 
         </p>
+        
         <h3 class="card-title">{{this.Cargo}}</h3>
         <h6 class="card-subtitle mb-0 text-muted"><strong>Ubicación:</strong><label id="lugar_vacante"
                 class="ml-2">{{this.Lugar}}</label></h6>
@@ -20,6 +21,7 @@
     </div>
     <div class="collapse px-4" id="collapse_vacante_{{this._id}}">
         <hr class="mt-0">
+        
         <small class="text-muted"><label for="descripción_vacante" id="descripción_vacante">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquet malesuada feugiat. Curabitur
                 fermentum bibendum nulla, non dictum ipsum tincidunt non. Quisque convallis pharetra tempor. Donec id
@@ -32,9 +34,14 @@
             </label></small>
         <h6 class="card-subtitle py-2 mb-2 text-muted"><strong>Duración:</strong><label id="duracion_vacante"
                 class="ml-2">{{this.Tiempo}}</label></h6>
-        <a href="confing_vacante" type="button" class="btn btn-warning mb-4 btn-block"
-            id="btn_gestionar_vacante_{{this._id}}"><strong>Gestionar</strong></a>
-        <button type="button" class="btn btn-warning mb-4 btn-block" id="btn_postulantes"><strong>Ver
+        <form action="/vacantes" method="post">
+            <input type="hidden" name="id_de_la_vacante" value="{{ this._id }}">
+            <input type="hidden" name="nombre_de_la_vacante" value="{{ this.Cargo }}">
+            <button class="btn btn-warning mb-4 btn-block" type="submit"><strong>Gestionar</strong></button>
+        </form>
+        
+           
+        <button type="button" class="btn btn-warning mb-4 btn-block" id="btn_postulantes" type="submit"><strong>Ver
                 Postulantes</strong></button>
     </div>
 </div>

@@ -1,0 +1,56 @@
+<!-- Formulario -->
+<!-- tener en cuenta que este formulario se llena para confirmar la existencia de la cuenta -->
+<div class="ctp container">
+    <div class="row">
+        <div class=" columna col-12 col-md-5 col-lg-5 mb-3 pr-5 pl-5 py-4 rounded-bottom offset-md-1 offset-lg-2">
+            <h4>Crear tu cuenta en PWEEL</h4>
+            <hr>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+
+                        <form action="/user/registro1" method="post">
+                            <div class="form-group">
+                                <label for="IDType">Tipo de identifición</label>
+                                <select name="IDType" id="IDType" class="form-control">
+                                    <option value="null" disabled>Selecciona una opción</option>
+                                    <option value="cedula">Cédula</option>
+                                    <option value="cedex">Cédula extranjeria</option>
+                                    <option value="pasaporte">Pasaporte</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="IDNum">Número de identificación</label>
+                                <input type="text" class="form-control" placeholder="No. identificación" name="IDNum"
+                                    id="IDNum">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Correo electronico</label>
+                                <input type="text" class="form-control" placeholder="correo@correo.com" name="email"
+                                    id="email">
+                            </div>
+                            <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+                            <button class="btn btn-primary offset-4" type="submit">Continuar</button>
+                        </form>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+        <div class="col-12 col-md-5 col-lg-4 columna2 d-flex flex-column justify-content-center align-items-center">
+            <p class="tx text-white mb-0"><strong>Bienvenido, completa los siguientes <br />datos para saber si ya
+                    estás<br />registrado. Si aún no estás inscrito<br />sigue los demás pasos para conocer<br />los
+                    mejores empleos de la ciudad.</strong>
+            </p>
+            {{#if hasErrors}}
+                <div class="alert alert-danger">
+                    {{#each messages}}
+                        <p>{{this}}</p>
+                    {{/each}}
+                </div>
+            {{/if}}
+        </div>
+    </div>
+</div>

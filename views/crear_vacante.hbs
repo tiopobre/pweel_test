@@ -52,85 +52,63 @@
                     <header class="filter-header d-flex justify-content-start align-items-center px-3 py-1 ">
                         <i class='far fa-id-badge' style='font-size:24px'></i>
                         <p class="title mb-0 ml-3 h6">Informacion Cargo</p>
-                        <button type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="true"
-                            class="btn btn-outline-secondary px-1 py-1 ml-auto" id="btn_edit_perf_lab"><i
-                                class="material-icons">edit</i></button>
                     </header>
-                    <div class="filter-content p-4 collapse show row" id="collapse2">
-
-
-                        <br>
-                        <div class="col-6">
-                            <h5 class="mt-3">Lugar</h5>
-                            <small class="text-muted">ubicacion.</small><br />
-                            <h5 class="mt-3">00/00/0000</h5>
-                            <small class="text-muted">Fecha.</small><br />
-                        </div>
-                        <div class="col-6 ">
-                            <h5 class="card-subtitle mb-0 d-flex justify-content-around">2/6
-                                <small id="Postulantes" class="ml-2 text-muted">Postulantes</small>
-                                <button type="button" data-toggle="collapse" class="btn btn-warning mt-3  "
-                                    id="btn_postulantes">Postulantes</button>
-                            </h5>
-
-                            <br>
-                            <h5 class="card-subtitle mb-0 d-flex justify-content-around">1/6:
-                                <small id="Aceptados" class="ml-2 text-muted">Aceptados</small>
-                                <button type="button" data-toggle="collapse" class="btn btn-warning mt-3"
-                                    id="btn_aceptados">Aceptados</button>
-                            </h5>
-                        </div>
-                        <div class="col-12">
-                            <h5>Descripción del cargo</h5><br />
-                            <small class="text-muted">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquet malesuada
-                                feugiat. Curabitur fermentum bibendum nulla, non dictum ipsum tincidunt non. Quisque
-                                convallis pharetra tempor. Donec id pretium leo. Pellentesque luctus massa non elit
-                                viverra pellentesque. Cras vitae neque molestie, rhoncus ipsum sit amet, lobortis dui.
-                                Fusce in urna sem. <br />
-                                Etiam nisi turpis, eleifend nec tellus id, efficitur pellentesque dolor. Proin vitae
-                                massa a augue sagittis vulputate. Duis vel fringilla magna, sit amet vestibulum enim.
-                                Fusce laoreet accumsan nisl eu sagittis. Morbi hendrerit sapien eget efficitur
-                                imperdiet. Aenean vitae nisl id est placerat congue a et nisi.
-                            </small>
-                            <br>
-                            <button type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="true"
-                                class="btn btn-warning mt-3" id="btn_completar_pers_info">Completar</button>
-                        </div>
-                        <!-- collapse  -->
-                    </div>
-                    <div class="filter-header collapse" id="collapse2">
-                        <form action="" class="formulario1">
+                    
+                    <div class="filter-header" >
+                        <form action="/crear_vacante" class="formulario1" method="post">
+                            <!-- Lugar_form  -->
+                            <div class="form-group w-75 mt-3 mb-2">
+                                <label for="nombre">Nombre del cargo <small class="text-muted">El que tipo de cargo buscas</small></label>
+                                <input type="text" class="form-control" name="nombre" id="nombre">
+                            </div>
                             <!-- descripcion_form  -->
                             <div class="form-group mt-3 mb-2">
                                 <label for="descripcion_vac">Describe brevemente el cargo :</label>
-                                <textarea class="form-control noresize h-25" id="descripcion_lab"></textarea>
+                                <textarea class="form-control noresize h-25" id="descripcion_vac" name="descripcion_vac"></textarea>
                             </div>
                             <!-- Lugar_form  -->
                             <div class="form-group w-75 mt-3 mb-2">
-                                <label for="yexp">Lugar <small class="text-muted">(sitio dinde se realiza la
+                                <label for="lugar_form">Lugar <small class="text-muted">(sitio dinde se realiza la
                                         tarea)</small></label>
-                                <input type="number" class="form-control" name="yexp" id="lugar_form" value="0">
+                                <input type="text" class="form-control" name="lugar_form" id="lugar_form">
                             </div>
                             <!-- fecha_form  -->
                             <div class="form-group w-75 mt-3 mb-2">
-                                <label for="yexp">Fecha <small class="text-muted">(fecha en la que se realiza la
+                                <label for="fecha_form">Fecha <small class="text-muted">(fecha en la que se realiza la
                                         tarea)</small></label>
-                                <input type="number" class="form-control" name="yexp" id="fecha_form" value="0">
+                                <input type="date" class="form-control" name="fecha_form" id="fecha_form" value="0">
                             </div>
                             <!-- duracion_form  -->
                             <div class="form-group w-75 mt-3 mb-2">
-                                <label for="yexp">duracion <small class="text-muted">(tiempo que se deseñpeñara el
+                                <label for="duracion_form">duracion <small class="text-muted">horas (tiempo que se desempeñara el
                                         cargo)</small></label>
-                                <input type="number" class="form-control" name="yexp" id="duracion_form" value="0">
+                                <input type="number" class="form-control" name="duracion_form" id="duracion_form" value="0">
+                            </div>
+                            <!-- duracion_form  -->
+                            <div class="form-group w-75 mt-3 mb-2">
+                                <label for="pagus">Pago <small class="text-muted">(Cuanto se le pagara al postulante)</small></label>
+                                <input type="number" class="form-control" name="pagus" id="pagus" value="0">
                             </div>
                             <!-- postulantes_form  -->
                             <div class="form-group w-75 mt-3 mb-2">
-                                <label for="yexp">No. vacantes <small class="text-muted">(numero de vacantes para el
+                                <label for="num_postulantes_form">No. vacantes <small class="text-muted">(numero de vacantes para el
                                         cargo)</small></label>
-                                <input type="number" class="form-control" name="yexp" id="postulantes_form" value="0">
+                                <input type="number" class="form-control" name="num_postulantes_form" id="num_postulantes_form" value="0">
                             </div>
-                            <button type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="true"
+                            <!-- postulantes_form  -->
+                            <div class="form-group w-75 mt-3 mb-2">
+                                <label for="express">¿Será express? <small class="text-muted">(se requiere de urgencia)</small></label>
+                                <div class="btn-group" data-toggle="buttons">
+                                    <label class="btn btn-primary">
+                                        <input type="radio" name="express" id="express_t">Si
+                                    </label>
+                                    <label class="btn btn-primary">
+                                        <input type="radio" name="express" id="express_f">No
+                                    </label>
+                                </div>
+                            </div>
+                            <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+                            <button type="submit" data-toggle="collapse" data-target="#collapse2" aria-expanded="true"
                                 class="btn btn-warning mt-3 d-flex" id="btn_completar_pers_info"><i
                                     class='far fa-save mr-2' style='font-size:24px'></i><strong>Guardar
                                     información</strong></button>

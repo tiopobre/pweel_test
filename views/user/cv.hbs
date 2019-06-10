@@ -1,0 +1,231 @@
+<script src="/javascripts/radialprogress.js"></script>
+<!---- Contenido ---->
+<div class="container">
+    <div class="row mt-3 mb-5 mx-5">
+        <!--- Breadcrumb --->
+        <div class="col-12 pl-0">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb arr-right">
+                    <li class="breadcrumb-item" aria-current="page"><strong>Inicio</strong></li>
+                    <li class="breadcrumb-item active" aria-current="page"><strong>Hoja de vida</strong></li>
+                </ol>
+            </nav>
+        </div>
+        <!--- Titulo de la página --->
+        <div class=" titulo col-12 mb-3 px-3 py-2">
+            <div class="flex-row row justify-content-between align-items-center px-4">
+                <i class='fas fa-user-tie' style='font-size:24px'></i>
+                <h4>Tu hoja de vida</h4>
+                <button type="button" class="btn btn-outline-secondary" id="btn_config_user"><i class="fa fa-gear"
+                        style="font-size:25px; color:#ff7011"></i></button>
+            </div>
+        </div>
+        <!--- Porcentaje --->
+        <div class="colp col-md-4 bg-white mr-lg-3 d-lg-none d-none d-lg-block d-xl-block py-4 px-5" align="center">
+            <p>Actualmente tu hoja de vida esta al:</p>
+            <div id="bar" class="mt-3"></div>
+            <script>
+                var bar = new RadialProgress(document.getElementById("bar"), {
+                    progress: 0.45,
+                    thick: 5,
+                    colorText: "#202020",
+                    colorBg: "rgba(0,0,0,.2)",
+                    colorFg: "#ff7011",
+                    fixedTextSize: 0.25,
+                    round: true
+                });
+
+            </script>
+
+        </div>
+        <div class="vl mx-3 d-lg-none d-none d-lg-block d-xl-block"></div>
+        <!---- Formulario ---->
+        <div class="col-lg-7 col-md-12 ml-md-0 ml-lg-3 p-0" style="background: rgb(250,250,250)">
+            <!-- Avatar -->
+            <div class="avatar-upload">
+                <div class="avatar-edit">
+                    <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" class="inp" />
+                    <label for="imageUpload" class="lab"></label>
+                </div>
+                <div class="avatar-preview">
+                    <div id="imagePreview" style="background-image: url(imgs/perfil.jpg);">
+                    </div>
+                </div>
+            </div>
+            <div class="list-group filter-wrap">
+                <!-- Info personal -->
+                <article class="list-group-item p-0">
+                    <header
+                        class="filter-header d-flex justify-content-start align-items-center px-3 py-1 border border-light rounded-top border-right-0 border-left-0 border-top-0">
+                        <i class='far fa-address-card' style='font-size:24px'></i>
+                        <p class="title mb-0 ml-2 h6">Informacion personal</p>
+                        <button type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="true"
+                            class="btn btn-outline-secondary px-1 py-1 ml-auto" id="btn_edit_pers_info"><i
+                                class="material-icons">edit</i></button>
+                    </header>
+                    <div class="filter-content p-4 collapse show" id="collapse1">
+                        <small class="text-muted">Nombre completo</small>
+                        <h4 id="#fullname">David Santiago Reina Rojas</h4>
+                        <small class="text-muted">Teléfono de contacto</small>
+                        <h4 id="cel">+57 3125154722</h4>
+                        <button type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="true"
+                            class="btn btn-warning mt-3" id="btn_completar_pers_info">Completar</button>
+                    </div>
+                    <div class="filter-content collapse" id="collapse1">
+                        <form action="" class="formulario1">
+                            <div class="form-group w-75 mt-3 mb-2">
+                                <label for="name">Nombres</label>
+                                <input type="text" class="form-control" name="name" id="name">
+                            </div>
+                            <div class="form-group w-75 mb-2">
+                                <label for="lname1">Primer apellido</label>
+                                <input type="text" class="form-control" name="lname1" id="lname1">
+                            </div>
+                            <div class="form-group w-75 mb-2">
+                                <label for="lname2">Segundo apellido</label>
+                                <input type="text" class="form-control" name="lname2" id="lname2">
+                            </div>
+                            <div class="form-group mb-2">
+                                <label for="IDType">Tipo de identifición</label>
+                                <select name="IDType" id="IDType" class="form-control w-50" disabled>
+                                    <option value="null" disabled>Selecciona una opción</option>
+                                    <option value="cedula">Cédula</option>
+                                    <option value="cedex">Cédula extranjeria</option>
+                                    <option value="pasaporte">Pasaporte</option>
+                                </select>
+                            </div>
+                            <div class="form-group w-75">
+                                <label for="IDNum">Número de identificación</label>
+                                <input type="text" class="form-control" placeholder="No. identificación" name="IDNum"
+                                    id="IDNum" disabled>
+                            </div>
+                            <div class="form-group w-md-75 row">
+                                <label for="bday" class="col-12">Fecha de nacimiento</label>
+                                <div class="col">
+                                    <input type="number" class="form-control" placeholder="Día" name="bday" id="bday">
+                                </div>
+                                <div class="col">
+                                    <select name="bmonth" id="bmonth" class="form-control w-100">
+                                        <option value="null" disabled selected>Mes</option>
+                                        <option value="bjan">Enero</option>
+                                        <option value="bfeb">Febrero</option>
+                                        <option value="bmar">Marzo</option>
+                                        <option value="bapr">Abril</option>
+                                        <option value="bmay">Mayo</option>
+                                        <option value="bjun">Junio</option>
+                                        <option value="bjul">Julio</option>
+                                        <option value="baug">Agosto</option>
+                                        <option value="bsep">Septiembre</option>
+                                        <option value="boct">Octubre</option>
+                                        <option value="bnov">Noviembre</option>
+                                        <option value="bdic">Diciembre</option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <input type="number" class="form-control" placeholder="Año" name="byear" id="byear">
+                                </div>
+                            </div>
+                            <div class="form-group w-75 mb-2">
+                                <label for="gender">Género</label><br />
+                                <div class="btn-group" data-toggle="buttons">
+                                    <label class="btn btn-outline-secondary">
+                                        <input type="radio" name="gener" id="woman" class="inp"><i class='fas fa-female'
+                                            style='font-size:24px'></i>
+                                    </label>
+                                    <label class="btn btn-outline-secondary">
+                                        <input type="radio" name="gener" id="men" class="inp"><i class='fas fa-male'
+                                            style='font-size:24px'></i>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group mb-2">
+                                <label for="CivilState">Estado civil</label>
+                                <select name="CivilState" id="CivilState" class="form-control w-50">
+                                    <option value="soltero">Soltero(a)</option>
+                                    <option value="casado">Casado(a)</option>
+                                    <option value="union">Union libre</option>
+                                    <option value="divorciado">Divorciado(a)</option>
+                                    <option value="viudo">Viudo(a)</option>
+                                </select>
+                            </div>
+                            <h6 class="mt-4">¿Donde vives?</h6>
+                            <div class="form-group w-75 mt-3 mb-2">
+                                <label for="city">Ciudad</label>
+                                <input type="text" class="form-control" placeholder="Toda Colombia, Colombia"
+                                    name="city" id="city">
+                            </div>
+                            <div class="form-group w-75 mt-3 mb-2">
+                                <label for="adress">Dirección de residencia</label>
+                                <input type="text" class="form-control" placeholder="Dirección de residencia"
+                                    name="adress" id="adress">
+                            </div>
+                            <h6 class="mt-4">¿Donde naciste?</h6>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Selecciona aquí si naciste en la
+                                    misma ciudad donde vives.</label>
+                            </div>
+                            <div class="form-group w-75 mt-3 mb-2">
+                                <label for="city">Ciudad</label>
+                                <input type="text" class="form-control" placeholder="Ciudad donde naciste" name="city"
+                                    id="city">
+                            </div>
+                            <h6 class="mt-4">¿Como te pueden contactar?</h6>
+                            <div class="form-group w-75 mb-2">
+                                <label for="cel">Telefono principal</label>
+                                <input type="text" class="form-control" placeholder="Célular" name="cel" id="cel">
+                                <small class="form-text text-muted">Ejm: +57 3334444555</small>
+                            </div>
+                            <div class="form-group w-75 mb-4">
+                                <label for="fijo">Telefono secundario</label>
+                                <input type="text" class="form-control" placeholder="Fijo" name="fijo" id="fijo">
+                                <small class="form-text text-muted">Ejm: +57 3334444</small>
+                            </div>
+                            <div class="form-group w-75 mt-1 mb-2">
+                                <label for="email">Correo electronico</label>
+                                <input type="email" class="form-control" placeholder="correo@correo.com" name="email"
+                                    id="email">
+                            </div>
+                            <button type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="true"
+                                class="btn btn-warning mt-3 d-flex" id="btn_completar_pers_info"><i
+                                    class='far fa-save mr-2' style='font-size:24px'></i><strong>Guardar
+                                    información</strong></button>
+                        </form>
+                    </div>
+                </article>
+                <!-- Perfil laboral -->
+                <article class="list-group-item p-0">
+                    <header class="filter-header d-flex justify-content-start align-items-center px-3 py-1 ">
+                        <i class='far fa-id-badge' style='font-size:24px'></i>
+                        <p class="title mb-0 ml-3 h6">Perfil laboral</p>
+                        <button type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="true"
+                            class="btn btn-outline-secondary px-1 py-1 ml-auto" id="btn_edit_perf_lab"><i
+                                class="material-icons">edit</i></button>
+                    </header>
+                    <div class="filter-content p-4 collapse show" id="collapse2">
+                        <h5>Descripción de tu perfil laboral</h5>
+                        <small class="text-muted">Cúentanos cuál es tu perfil laboral, un resumen de lo qu ehaces, lo
+                            que has estudiado, tus logros y habilidades.</small>
+                        <br>
+                        <button type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="true"
+                            class="btn btn-warning mt-3" id="btn_completar_pers_info">Completar</button>
+                    </div>
+                    <div class="filter-header collapse" id="collapse2">
+                        <form action="" class="formulario1">
+                            <div class="form-group mt-3 mb-2">
+                                <label for="descripcion_lab">Describe tu perfil laboral:</label>
+                                <textarea class="form-control noresize h-25" id="descripcion_lab"></textarea>
+                            </div>
+
+                            <button type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="true"
+                                class="btn btn-warning mt-3 d-flex" id="btn_completar_pers_info"><i
+                                    class='far fa-save mr-2' style='font-size:24px'></i><strong>Guardar
+                                    información</strong></button>
+                        </form>
+                    </div>
+                </article>
+            </div>
+
+        </div>
+    </div>
+</div>

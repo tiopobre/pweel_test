@@ -1,20 +1,9 @@
-html {
-    background: url(../imgs/Fondo-registro.jpg);
-}
-
 body {
-    background: rgba(0, 0, 0, 0);
+    background: url(/images/Fondo-registro.jpg);
 }
 
 .navbar {
     background: rgba(0, 0, 0, 1);
-}
-
-.breadcrumb {
-    background: rgba(0, 0, 0, 0);
-    margin-bottom: 0px;
-    padding-bottom: 3px;
-    padding-left: 3px;
 }
 
 .colp {
@@ -38,20 +27,13 @@ body {
     height: 700px;
 }
 
-.arr-right .breadcrumb-item + .breadcrumb-item::before {
-
+.arr-right .breadcrumb-item+.breadcrumb-item::before {
     content: "›";
-
     vertical-align: top;
-
     color: grey;
-
     font-size: 35px;
-
     line-height: 18px;
-
 }
-
 
 footer {
     position: relative;
