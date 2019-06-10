@@ -31,8 +31,8 @@ router.get('/', function (req, res, next) {
 
 /* Obtener pagina de trabajos. */
 router.get('/trabajos', function (req, res, next) {
-    
-    //vacantes postuladas
+
+    //vacantes "mispostulaciones"
     vacante.find({}, function (err, docs) {
         V_pos1 = [];
         V_pos2 = [];
@@ -43,11 +43,9 @@ router.get('/trabajos', function (req, res, next) {
                 V_pos2.push(docs[i]);
             }
         }
-        
+
     });
-
     // todas las vacantes
-
     vacante.find({}, function (err, docs) {
 
         for (var i = 0; i < docs.length; i++) {
@@ -74,14 +72,30 @@ router.get('/trabajos', function (req, res, next) {
 router.get('/vacantes', function (req, res, next) {
 
     //vacantes propias
+
+    User.findOne({ 'cuenta.email': email }, function (err, user) {
+    var    V_prop1 = [];
+    var    V_prop2 = [];
+        for (var i = 0; i < vacantes_empleador.length; i++) {
+            vacante.findById(user.vacantes_propias[i], function (err, vac) {
+                if (i % 2 == 0) {
+                    V_prop1.push(docs[i]);
+                } else {
+                    V_prop2.push(docs[i]);
+                }
+            });
+        }
+    });
+
+    //*/*//**/ */
+  
+    // todas las vacantes
     vacante.find({}, function (err, docs) {
-        V_prop1 = [];
-        V_prop2 = [];
         for (var i = 0; i < docs.length; i++) {
             if (i % 2 == 0) {
-                V_prop1.push(docs[i]);
+                V_chunk1.push(docs[i]);
             } else {
-                V_prop1.push(docs[i]);
+                V_chunk2.push(docs[i]);
             }
         }
         //render pag
@@ -95,17 +109,6 @@ router.get('/vacantes', function (req, res, next) {
             vacantes_prop1: V_prop1,
             vacantes_prop2: V_prop2
         });
-    });
-    // todas las vacantes
-    vacante.find({}, function (err, docs) {
-        for (var i = 0; i < docs.length; i++) {
-            if (i % 2 == 0) {
-                V_chunk1.push(docs[i]);
-            } else {
-                V_chunk2.push(docs[i]);
-            }
-        }
-
     });
 
 });
