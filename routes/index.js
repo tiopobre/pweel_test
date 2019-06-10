@@ -91,7 +91,7 @@ router.get('/vacantes', function (req, res, next) {
             }
         }
     //render pag
-        res.render('trabajos', {
+        res.render('vacantes', {
             title: 'Vacantes | PWEEL',
             style: 'style_vacantes.css',
             vacantes1: V_chunk1,
