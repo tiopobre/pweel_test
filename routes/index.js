@@ -32,7 +32,7 @@ router.get('/', function (req, res, next) {
 /* Obtener pagina de trabajos. */
 router.get('/trabajos', function (req, res, next) {
     // todas las vacantes
-   
+
     vacante.find({}, function (err, docs) {
 
         for (var i = 0; i < docs.length; i++) {
@@ -69,7 +69,7 @@ router.get('/trabajos', function (req, res, next) {
 
 /* Obtener pagina de Vacantes. */
 router.get('/vacantes', function (req, res, next) {
-// todas las vacantes
+    // todas las vacantes
     vacante.find({}, function (err, docs) {
         for (var i = 0; i < docs.length; i++) {
             if (i % 2 == 0) {
@@ -79,31 +79,31 @@ router.get('/vacantes', function (req, res, next) {
             }
         }
     });
- //vacantes propias
- User.findOne({ 'cuenta.email': email}, function(err, user){
-    V_prop1 = [];
-    V_prop2 = [];
-    for (var i = 0; i < vacantes_empleador.length; i++) {
-        vacante.findById(user.vacantes_propias[i],function(err,vac){
-            if (i % 2 == 0) {
-                V_prop1.push(docs[i]);
-            } else {
-                V_prop2.push(docs[i]);
-            }  
-        });
-    }
-//render pag
-res.render('vacantes', {
-    title: 'Vacantes | PWEEL',
-    style: 'style_vacantes.css',
-    vacantes1: V_chunk1,
-    vacantes2: V_chunk2,
-    doctam: docs.length,
+    //vacantes propias
+    User.findOne({ 'cuenta.email': email }, function (err, user) {
+        V_prop1 = [];
+        V_prop2 = [];
+        for (var i = 0; i < vacantes_empleador.length; i++) {
+            vacante.findById(user.vacantes_propias[i], function (err, vac) {
+              //  if (i % 2 == 0) {
+                //    V_prop1.push(docs[i]);
+                //} else {
+                 //   V_prop2.push(docs[i]);
+               // }
+            });
+        }
+        //render pag
+        res.render('vacantes', {
+            title: 'Vacantes | PWEEL',
+            style: 'style_vacantes.css',
+            vacantes1: V_chunk1,
+            vacantes2: V_chunk2,
+            doctam: docs.length,
 
-    vacantes_prop1: V_prop1,
-    vacantes_prop2: V_prop2
-});
- });
+            vacantes_prop1: V_prop1,
+            vacantes_prop2: V_prop2
+        });
+    });
 
 });
 
