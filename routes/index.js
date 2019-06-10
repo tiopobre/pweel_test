@@ -21,6 +21,11 @@ var T_chunk2 = [];
 
 var V_chunk1 = [];
 var V_chunk2 = [];
+
+var  V_prop1 = [];
+var  V_prop2 = [];
+var tamaño_lista_ids;
+var id_user;
 /* GET home page. */
 router.get('/', function (req, res, next) {
     res.render('home', {
@@ -72,23 +77,14 @@ router.get('/trabajos', function (req, res, next) {
 router.get('/vacantes', function (req, res, next) {
 
     //vacantes propias
-    var  V_prop1 = [];
-    var  V_prop2 = [];
-    var tamaño_lista_ids
+    
     User.findOne({ 'cuenta.email': email }, function (err, user) {
    
         lista_ids=[];
         lista_ids = user.vacantes_empleador;
         tamaño_lista_ids=  lista_ids.length;   
-        for (var i = 0; i < vacantes_empleador.length; i++) {
-            vacante.findById(user.vacantes_propias[i], function (err, vac) {
-                if (i % 2 == 0) {
-                    V_prop1.push(docs[i]);
-                } else {
-                    V_prop2.push(docs[i]);
-                }
-            });
-        }
+        id_user = user._id;
+
     });
 
     //*/*//**/ */
@@ -110,6 +106,7 @@ router.get('/vacantes', function (req, res, next) {
             vacantes2: V_chunk2,
             doctam: docs.length,
             list_tam: tamaño_lista_ids,
+            id_usuario: id_user,
 
             vacantes_prop1: V_prop1,
             vacantes_prop2: V_prop2
