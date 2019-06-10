@@ -65,9 +65,9 @@ router.get('/trabajos', function (req, res, next) {
 
 /* Obtener pagina de vacantes. */
 router.get('/vacantes', function (req, res, next) {
-    vacante.find({}, function (err, docs) {
-        chunk1 = [];
-        chunk2 = [];
+    chunk1 = [];
+    chunk2 = [];
+    vacante.find({}, function (err, docs) {    
         for (var i = 0; i < docs.length; i++) {
             if (i % 2 == 0) {
                 chunk1.push(docs[i]);
@@ -75,7 +75,6 @@ router.get('/vacantes', function (req, res, next) {
                 chunk2.push(docs[i]);
             }
         }
-
     });
     //vacantes propias
     vacante.find({}, function (err, docs) {
