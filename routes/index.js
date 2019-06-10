@@ -26,10 +26,10 @@ router.get('/', function (req, res, next) {
 /* Obtener pagina de trabajos. */
 router.get('/trabajos', function (req, res, next) {
     // todas las vacantes
-    var chunk1 = [];
-    var chunk2 = [];
+    var obj;
     vacante.find({}, function (err, docs) {
-        
+        var chunk1 = [];
+        var chunk2 = [];
         for (var i = 0; i < docs.length; i++) {
             if (i % 2 == 0) {
                 chunk1.push(docs[i]);
@@ -37,13 +37,16 @@ router.get('/trabajos', function (req, res, next) {
                 chunk2.push(docs[i]);
             }
         }
-    });
-    //render pag
-    res.render('trabajos', { 
-        title: 'Trabajos | PWEEL',
+        obj = {
+            title: 'Trabajos | PWEEL',
             style: 'style_trabajos.css',
             vacantes1: chunk1,
             vacantes2: chunk2,
+        };
+    });
+    //render pag
+    res.render('trabajos', { 
+        obj
     });
     //vacantes postuladas
 });
