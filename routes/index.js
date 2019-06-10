@@ -16,8 +16,11 @@ var numID = '';
 var email = '';
 
 
-var chunk1 = [];
-var chunk2 = [];
+var T_chunk1 = [];
+var T_chunk2 = [];
+
+var V_chunk1 = [];
+var V_chunk2 = [];
 /* GET home page. */
 router.get('/', function (req, res, next) {
     res.render('home', {
@@ -55,46 +58,46 @@ router.get('/trabajos', function (req, res, next) {
         res.render('trabajos', {
             title: 'Trabajos | PWEEL',
             style: 'style_trabajos.css',
-            vacantes1: chunk1,
-            vacantes2: chunk2,
+            vacantes1: T_chunk1,
+            vacantes2: T_chunk2,
             vacantes_pos1: V_pos1,
             vacantes_pos2: V_pos2
         });
     });
-
-
 });
 
-/* Obtener pagina de vacantes. */
-router.get('/vacantes', function (req, res, next) {
 
-    vacante.find({}, function (err, docs) {    
+/* Obtener pagina de Vacantes. */
+router.get('/vacantes', function (req, res, next) {
+// todas las vacantes
+    vacante.find({}, function (err, docs) {
         for (var i = 0; i < docs.length; i++) {
             if (i % 2 == 0) {
-                chunk1.push(docs[i]);
+                V_chunk1.push(docs[i]);
             } else {
-                chunk2.push(docs[i]);
+                V_chunk2.push(docs[i]);
             }
         }
     });
-    //vacantes propias
+ //vacantes postuladas
     vacante.find({}, function (err, docs) {
-        varV_prop1 = [];
+        V_prop1 = [];
         V_prop2 = [];
         for (var i = 0; i < docs.length; i++) {
             if (i % 2 == 0) {
-                V_pos1.push(docs[i]);
+                V_prop1.push(docs[i]);
             } else {
-                V_pos2.push(docs[i]);
+                V_prop1.push(docs[i]);
             }
         }
-        //render pag
-        res.render('vacantes', {
+    //render pag
+        res.render('trabajos', {
             title: 'Vacantes | PWEEL',
             style: 'style_vacantes.css',
-            vacantes1: chunk1,
-            vacantes2: chunk2,
+            vacantes1: V_chunk1,
+            vacantes2: V_chunk2,
             doctam: docs.length,
+
             vacantes_pos1: V_prop1,
             vacantes_pos2: V_prop2
         });
