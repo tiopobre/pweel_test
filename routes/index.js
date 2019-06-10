@@ -83,15 +83,15 @@ router.get('/vacantes', function (req, res, next) {
     User.findOne({ 'cuenta.email': email }, function (err, user) {
         V_prop1 = [];
         V_prop2 = [];
-        for (var i = 0; i < vacantes_empleador.length; i++) {
-            vacante.findById(user.vacantes_propias[i], function (err, vac) {
+    //    for (var i = 0; i < vacantes_empleador.length; i++) {
+        //    vacante.findById(user.vacantes_propias[i], function (err, vac) {
               //  if (i % 2 == 0) {
                 //    V_prop1.push(docs[i]);
                 //} else {
                  //   V_prop2.push(docs[i]);
                // }
-            });
-        }
+        //    });
+    //    }
         //render pag
         res.render('vacantes', {
             title: 'Vacantes | PWEEL',
