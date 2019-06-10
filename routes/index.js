@@ -29,7 +29,7 @@ router.get('/trabajos', function (req, res, next) {
     var chunk1 = [];
     var chunk2 = [];
     vacante.find({}, function (err, docs) {
-       
+
         for (var i = 0; i < docs.length; i++) {
             if (i % 2 == 0) {
                 chunk1.push(docs[i]);
@@ -50,17 +50,17 @@ router.get('/trabajos', function (req, res, next) {
             }
         }
         //render pag
-    res.render('trabajos', { 
-        title: 'Trabajos | PWEEL',
+        res.render('trabajos', {
+            title: 'Trabajos | PWEEL',
             style: 'style_trabajos.css',
             vacantes1: chunk1,
             vacantes2: chunk2,
             vacantes_pos1: V_pos1,
             vacantes_pos2: V_pos2
+        });
     });
-    });
-  
-    
+
+
 });
 
 /* Obtener pagina de vacantes. */
@@ -76,15 +76,29 @@ router.get('/vacantes', function (req, res, next) {
             }
         }
 
+    });
+    //vacantes propias
+    vacante.find({}, function (err, docs) {
+        V_prop1 = [];
+        V_prop2 = [];
+        for (var i = 0; i < docs.length; i++) {
+            if (i % 2 == 0) {
+                V_pos1.push(docs[i]);
+            } else {
+                V_pos2.push(docs[i]);
+            }
+        }
+        //render pag
         res.render('vacantes', {
             title: 'Vacantes | PWEEL',
             style: 'style_vacantes.css',
             vacantes1: chunk1,
             vacantes2: chunk2,
-            doctam: docs.length
+            doctam: docs.length,
+            vacantes_pos1: V_prop1,
+            vacantes_pos2: V_prop2
         });
     });
-
 });
 
 router.post('/vacantes', function (req, res, next) {
