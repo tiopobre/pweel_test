@@ -78,7 +78,10 @@ router.get('/vacantes', function (req, res, next) {
 
     //vacantes propias
     
- 
+    User.findOne({'cuenta.email': email}, function(err, user) {
+        
+        
+    });
     //*/*//**/ */
   
     // todas las vacantes
