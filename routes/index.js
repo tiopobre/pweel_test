@@ -59,13 +59,7 @@ router.get('/trabajos', function (req, res, next) {
             vacantes_pos2: V_pos2
     });
     })
-    //render pag
-    res.render('trabajos', { 
-        title: 'Trabajos | PWEEL',
-            style: 'style_trabajos.css',
-            vacantes1: chunk1,
-            vacantes2: chunk2,
-    });
+  
     
 });
 
