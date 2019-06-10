@@ -26,10 +26,10 @@ router.get('/', function(req, res, next) {
 /* Obtener pagina de trabajos. */
 router.get('/trabajos', function(req, res, next) {
     // todas las vacantes
-    
+    chunk1 = [];
+    chunk2 = [];
     vacante.find({}, function(err, docs) {
-        chunk1 = [];
-        chunk2 = [];
+        
         for (var i = 0; i < docs.length; i++) {
             if (i % 2 == 0) {
                 chunk1.push(docs[i]);
