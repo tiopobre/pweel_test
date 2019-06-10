@@ -79,7 +79,7 @@ router.get('/vacantes', function (req, res, next) {
     //vacantes propias
     
     User.findOne({'cuenta.email': email}, function(err, user) {
-        
+        id_user = user._id;
         
     });
     //*/*//**/ */
@@ -100,7 +100,7 @@ router.get('/vacantes', function (req, res, next) {
             vacantes1: V_chunk1,
             vacantes2: V_chunk2,
             doctam: docs.length,
-
+            id_usuario: id_user,
 
             vacantes_prop1: V_prop1,
             vacantes_prop2: V_prop2
