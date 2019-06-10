@@ -31,18 +31,7 @@ router.get('/', function (req, res, next) {
 
 /* Obtener pagina de trabajos. */
 router.get('/trabajos', function (req, res, next) {
-    // todas las vacantes
-
-    vacante.find({}, function (err, docs) {
-
-        for (var i = 0; i < docs.length; i++) {
-            if (i % 2 == 0) {
-                T_chunk1.push(docs[i]);
-            } else {
-                T_chunk2.push(docs[i]);
-            }
-        }
-    });
+    
     //vacantes postuladas
     vacante.find({}, function (err, docs) {
         V_pos1 = [];
@@ -52,6 +41,20 @@ router.get('/trabajos', function (req, res, next) {
                 V_pos1.push(docs[i]);
             } else {
                 V_pos2.push(docs[i]);
+            }
+        }
+        
+    });
+
+    // todas las vacantes
+
+    vacante.find({}, function (err, docs) {
+
+        for (var i = 0; i < docs.length; i++) {
+            if (i % 2 == 0) {
+                T_chunk1.push(docs[i]);
+            } else {
+                T_chunk2.push(docs[i]);
             }
         }
         //render pag
@@ -69,29 +72,18 @@ router.get('/trabajos', function (req, res, next) {
 
 /* Obtener pagina de Vacantes. */
 router.get('/vacantes', function (req, res, next) {
-    // todas las vacantes
-    vacante.find({}, function (err, docs) {
-        for (var i = 0; i < docs.length; i++) {
-            if (i % 2 == 0) {
-                V_chunk1.push(docs[i]);
-            } else {
-                V_chunk2.push(docs[i]);
-            }
-        }
-    });
+
     //vacantes propias
-    User.findOne({ 'cuenta.email': email }, function (err, user) {
+    vacante.find({}, function (err, docs) {
         V_prop1 = [];
         V_prop2 = [];
-    //    for (var i = 0; i < vacantes_empleador.length; i++) {
-        //    vacante.findById(user.vacantes_propias[i], function (err, vac) {
-              //  if (i % 2 == 0) {
-                //    V_prop1.push(docs[i]);
-                //} else {
-                 //   V_prop2.push(docs[i]);
-               // }
-        //    });
-    //    }
+        for (var i = 0; i < docs.length; i++) {
+            if (i % 2 == 0) {
+                V_prop1.push(docs[i]);
+            } else {
+                V_prop1.push(docs[i]);
+            }
+        }
         //render pag
         res.render('vacantes', {
             title: 'Vacantes | PWEEL',
@@ -103,6 +95,17 @@ router.get('/vacantes', function (req, res, next) {
             vacantes_prop1: V_prop1,
             vacantes_prop2: V_prop2
         });
+    });
+    // todas las vacantes
+    vacante.find({}, function (err, docs) {
+        for (var i = 0; i < docs.length; i++) {
+            if (i % 2 == 0) {
+                V_chunk1.push(docs[i]);
+            } else {
+                V_chunk2.push(docs[i]);
+            }
+        }
+
     });
 
 });
