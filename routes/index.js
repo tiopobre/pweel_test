@@ -78,15 +78,7 @@ router.get('/vacantes', function (req, res, next) {
 
     //vacantes propias
     
-    User.findOne({ 'cuenta.email': email }, function (err, user) {
-   
-        lista_ids=[];
-        lista_ids = user.vacantes_empleador;
-        tamaño_lista_ids=  lista_ids.length;   
-        id_user = user._id;
-
-    });
-
+ 
     //*/*//**/ */
   
     // todas las vacantes
@@ -105,8 +97,7 @@ router.get('/vacantes', function (req, res, next) {
             vacantes1: V_chunk1,
             vacantes2: V_chunk2,
             doctam: docs.length,
-            list_tam: tamaño_lista_ids,
-            id_usuario: id_user,
+
 
             vacantes_prop1: V_prop1,
             vacantes_prop2: V_prop2
