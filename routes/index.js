@@ -27,6 +27,7 @@ var  V_prop2 = [];
 var ista_ids = [];
 var tam_ista_ids;
 var id_user;
+var id_v0;
 /* GET home page. */
 router.get('/', function (req, res, next) {
     res.render('home', {
@@ -81,7 +82,8 @@ router.get('/vacantes', function (req, res, next) {
     
     User.findOne({'cuenta.email': email}, function(err, user) {
         id_user = user._id;
-        
+        tam_ista_ids = user.cv.vacantes_propias;
+        id_v0 = user.cv.vacantes_propias[0];
     });
     //*/*//**/ */
   
@@ -102,6 +104,8 @@ router.get('/vacantes', function (req, res, next) {
             vacantes2: V_chunk2,
             doctam: docs.length,
             id_usuario: id_user,
+            list_tam:tam_ista_ids,
+            idvacante0 :id_v0,
 
             vacantes_prop1: V_prop1,
             vacantes_prop2: V_prop2
