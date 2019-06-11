@@ -29,6 +29,7 @@ var tam_ista_ids;
 var id_user;
 var id_v0;
 var Uname;
+var Vname;
 /* GET home page. */
 router.get('/', function (req, res, next) {
     res.render('home', {
@@ -87,6 +88,7 @@ router.get('/vacantes', function (req, res, next) {
         tam_ista_ids = user.cv.vacantes_propias.length;
         id_v0 = user.cv.vacantes_propias[0];  
             vacante.findById(user.cv.vacantes_propias[0], function (err, vac) {
+                Vname = vac.cargo;
             });
     });
     //*/*//**/ */
@@ -106,11 +108,13 @@ router.get('/vacantes', function (req, res, next) {
             style: 'style_vacantes.css',
             vacantes1: V_chunk1,
             vacantes2: V_chunk2,
+
             doctam: docs.length,
             id_usuario: id_user,
             list_tam : tam_ista_ids,
             idvacante0 :id_v0,
             nombreu: Uname,
+            vacante_nombre : Vname,
 
             vacantes_prop1: V_prop1,
             vacantes_prop2: V_prop2
