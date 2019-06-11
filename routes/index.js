@@ -89,11 +89,6 @@ router.get('/vacantes', function (req, res, next) {
 
         for (var i = 0; i < user.cv.vacantes_propias.length; i++) {
             vacante.findById(user.cv.vacantes_propias[i], function (err, vac) {
-                if (i % 2 == 0) {
-                    V_prop1.push(docs[i]);
-                } else {
-                    V_prop2.push(docs[i]);
-                }
             });
         }
 
