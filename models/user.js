@@ -15,7 +15,17 @@ var userSchema = new Schema({
     },
     cv: {
         vacantes_propias: [Schema.Types.ObjectId],
-        vacantes_presentadas: [Schema.Types.ObjectId],
+        vacantes_presentadas: [{
+            id: Schema.Types.ObjectId,
+            Cargo: String,
+            Fecha_pub: String,
+            Fecha_tar: Date,
+            Lugar: String,
+            Tiempo: Number,
+            pago: Number,
+            descripcion: String,
+            estado: Number
+        }],
         porcent: { type: Number, required: true },
         inf: {
             nombres: { type: String, required: true },
@@ -35,7 +45,7 @@ var userSchema = new Schema({
             cel: { type: Number, required: true },
             tel: { type: Number, required: true }
         },
-        perfil_laboral: { type: Number, required: false }
+        perfil_laboral: { type: String, required: false }
     }
 });
 

@@ -1,0 +1,78 @@
+<div class="cv scrollbar-ripe-malinka collapse " id="collapse_postulado_{{this.id}}">
+    <div class="d-flex justify-content-center align-items-center py-3 ">
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider2 round"></span>
+        </label>
+        <div class="avatar-preview">
+            <div id="imagePreview" style="background-image: url(/images/perfil.jpg);">
+            </div>
+        </div>
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+        </label>
+    </div>
+    <div class="list-group filter-wrap">
+        <!-- Info personal -->
+        <article class="list-group-item p-0">
+            <header
+                class="filter-header d-flex justify-content-start align-items-center px-3 py-1 border border-light rounded-top border-right-0 border-left-0 border-top-0">
+                <i class='far fa-address-card' style='font-size:24px'></i>
+                <p class="title mb-0 ml-2 h6">Informacion personal</p>
+                <button type="button" data-toggle="collapse" data-target="#collapse{{this.id}}" aria-expanded="true"
+                    class="btn px-1 py-1 ml-auto" id="btn_seeinfo"><i class='fas fas fa-angle-down'
+                        style='font-size:32px;color:gray'></i></button>
+            </header>
+            <div class="vp-info filter-content p-4 collapse show" id="collapse{{this.id}}">
+                <small class="text-muted">Nombre completo</small>
+                <h4 id="fullname">{{this.nombres}} {{this.primer_apellido}} {{this.segundo_apellido}}</h4>
+                <small class="text-muted">Teléfono de contacto</small>
+                <h4 id="cel">{{this.cel}}</h4>
+            </div>
+            <div class="info filter-content p-4 collapse" id="collapse{{this.id}}">
+                <p class="card-subtitle mb-0"><strong>Nombres:</strong><label id="infNombres" class="ml-2">{{this.nombres}}</label></p>
+                <p class="card-subtitle mb-0"><strong>Apellidos:</strong><label id="infApellidos" class="ml-2">{{this.primer_apellido}} {{this.segundo_apellido}}</label></p>
+                <p class="card-subtitle mb-0"><strong>No. Identificación:</strong><label id="indID" class="ml-2">C.C.
+                        {{this.num_doc}}</label></p>
+                <p class="card-subtitle mb-0"><strong>Fecha de nacimiento:</strong><label id="infFechanaci"
+                        class="ml-2">{{this.num_doc}}</label></p>
+                <p class="card-subtitle mb-0"><strong>Genero:</strong><label id="infGenero"
+                        class="ml-2">{{this.genero}}</label></p>
+                <p class="card-subtitle mb-0"><strong>Ciudad de residencia:</strong><label id="infCiudad"
+                        class="ml-2">{{this.ciudad}}</label></p>
+                <p class="card-subtitle mb-0"><strong>Dirección:</strong><label id="infDireccion" class="ml-2">{{this.direccion}}</label></p>
+                <p class="card-subtitle mb-0"><strong>Ciudad de nacimiento:</strong><label id="infCiudadNatal"
+                        class="ml-2">{{this.born_city}}</label></p>
+                <p class="card-subtitle mb-0"><strong>Telefono principal:</strong><label id="infMovil"
+                        class="ml-2">{{this.cel}}</label></p>
+                <p class="card-subtitle mb-0"><strong>Relefono secundario:</strong><label id="ingFijo"
+                        class="ml-2">{{this.tel}}</label></p>
+                <p class="card-subtitle mb-0"><strong>E-mail:</strong><label id="infoEmail"
+                        class="ml-2">{{this.email}}</label></p>
+            </div>
+        </article>
+        <!-- Perfil laboral -->
+        <article class="list-group-item p-0">
+            <header class="filter-header d-flex justify-content-start align-items-center px-3 py-1 ">
+                <i class='far fa-id-badge' style='font-size:24px'></i>
+                <p class="title mb-0 ml-3 h6">Perfil laboral</p>
+                <button type="button" data-toggle="collapse" data-target="#collapse2_{{this.id}}" aria-expanded="true"
+                    class="btn px-1 py-1 ml-auto" id="btn_seelabinfo"><i class='fas fas fa-angle-down'
+                        style='font-size:32px;color:gray'></i></button>
+            </header>
+            <div class="vp-laboral filter-content p-4 collapse show" id="collapse2_{{this.id}}">
+                <h5>Descripción de su perfil laboral</h5>
+                <small class="text-muted" id="labDescrip">{{this.perfil_laboral}}</small>
+
+            </div>
+            <div class="laboral filter-header p-4 collapse" id="collapse2_{{this.id}}">
+                <form action="" class="formulario1">
+                    <p class="card-subtitle mb-0"><strong>Su descripción:</strong></p>
+                    <label id="infoEmail" class="ml-2">{{this.perfil_laboral}}</label>
+                    
+                </form>
+            </div>
+        </article>
+    </div>
+</div>

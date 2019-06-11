@@ -40,7 +40,7 @@ passport.use('local.signup2', new LocalStrategy({
         var newUser = new User();
         newUser.cuenta.email = email;
         newUser.cuenta.password = newUser.encryptPassword(password);
-        newUser.cv.porcent = 45;
+        newUser.cv.porcent = 0.45;
         newUser.cv.inf.nombres = req.body.name;
         newUser.cv.inf.primer_apellido = req.body.lname1;
         newUser.cv.inf.segundo_apellido = req.body.lname2;
@@ -80,7 +80,6 @@ passport.use('local.singin', new LocalStrategy({
     User.findOne({
         'cuenta.email': email
     }, function(err, user) {
-        console.log("--------------------------------->" + user);
         if (err) {
             return done(err);
         }

@@ -12,7 +12,7 @@
             <!---Contenido de las Tabs--->
             <div class="col-12 tab-content ">
                 <!---Vacantes--->
-                <div class="tab-pane active" id="tab1" role="tabpanel">
+                <div class="tab-pane active" id="tab1" role="tabpanel" style="margin-bottom: 155px;">
                     <!-- Search form -->
                     <form class="form-inline justify-content-center">
                         <i class="fas fa-search" aria-hidden="true"></i>
@@ -26,18 +26,14 @@
                     <div class="card-list d-flex flex-column flex-lg-row" id="lista_vacantes row">
                 <!-- Lista de vacantes -->
                         <div class="col-12 col-lg-6 p-0" id="columna1">
-                           <h6> id suario: {{id_usuario}} </h6>
-                            <h6> nombreu: {{nombreu}} </h6>
-                           <h6> id vac0: {{idvacante0}} </h6>
-                           <h6> id tam lista v : {{list_tam}} </h6>
-                           <h6> vacante  : {{vacante_nombre}} </h6>
-                            {{# each vacantes1}}
+                           <h1> fsadfsadf: 4</h1>
+                            {{# each vacantes_prop1}}
                             {{> card_vacante2}}
                             {{/each}}                          
                         </div>
                         <div class="col-12 col-lg-6 p-0" id="columna2">
-                           <h1> tamaño lista ids: {{list_tam}}</h1>
-                           {{# each vacantes_prop1}}
+                           <h1> fsadfsadf: {{doctam}}</h1>
+                           {{# each vacantes_prop2}}
                             {{> card_vacante2}}
                             {{/each}}                       
                         </div>
@@ -73,7 +69,7 @@
                     </nav>
                 </div>
     <!---En progreso--->
-                <div class="tab-pane" id="tab2" role="tabpanel">
+                <div class="tab-pane" id="tab2" role="tabpanel" style="margin-bottom: 215px;">
                     <!-- Search form -->
                     <form class="form-inline justify-content-center">
                         <i class="fas fa-search" aria-hidden="true"></i>

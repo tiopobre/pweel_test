@@ -39,9 +39,10 @@
             <input type="hidden" name="nombre_de_la_vacante" value="{{ this.Cargo }}">
             <button class="btn btn-warning mb-4 btn-block" type="submit"><strong>Gestionar</strong></button>
         </form>
-        
-           
-        <button type="button" class="btn btn-warning mb-4 btn-block" id="btn_postulantes" type="submit"><strong>Ver
-                Postulantes</strong></button>
+        <form action="/vacantes_to_postulados" method="post">
+            <input type="hidden" name="id_de_la_vacante" value="{{ this._id }}">
+            <input type="hidden" name="nombre_de_la_vacante" value="{{ this.Cargo }}">
+            <button class="btn btn-warning mb-4 btn-block" type="submit"><strong>Ver Postulantes</strong></button>
+        </form>
     </div>
 </div>

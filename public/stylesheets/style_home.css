@@ -2,7 +2,7 @@
     background: rgba(0, 0, 0, 1);
 }
 
-.sect{
+.sect {
     margin-top: 200px;
 }
 
@@ -60,7 +60,7 @@ footer {
     bottom: 0;
     left: 0;
     padding: 1rem;
-    background-color: whitesmoke;
+    background-color: black;
     text-align: left;
     color: gray
 }

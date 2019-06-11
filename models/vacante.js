@@ -14,7 +14,25 @@ var VacanateSchema = new Schema({
     descripcion: String,
     postulados: [{
         id: Schema.Types.ObjectId,
-        nombre: String,
+        nombres: { type: String, required: true },
+        primer_apellido: { type: String, required: true },
+        segundo_apellido: { type: String, required: true },
+        tipo_doc: { type: String, required: true },
+        num_doc: { type: Number, required: true },
+        born_date: {
+            day: { type: Number, required: true },
+            month: { type: String, required: true },
+            year: { type: Number, required: true }
+        },
+        genero: { type: Boolean, required: false },
+        ciudad: { type: String, required: false },
+        direccion: { type: String, required: false },
+        born_city: { type: String, required: false },
+        cel: { type: Number, required: true },
+        tel: { type: Number, required: true },
+        perfil_laboral: { type: String, required: false },
+        email: { type: String, required: true },
+        full: Boolean,
         aceptado: Boolean
     }]
 }, { collection: 'vacantes' });

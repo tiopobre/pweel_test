@@ -1,0 +1,30 @@
+<ul class="list-group p-0" id="postulado">
+    <li class="list-group-item rounded-0 p-0" style="background-color: rgba(0,0,0,0)">
+        <div class="d-lg-inline-flex justify-content-start py-1 py-1 px-4 w-100 d-none "
+            style="background-color: white">
+            <div class="avatar-preview1">
+                <div id="imagePreview" style="background-image: url(imgs/perfil.jpg);"></div>
+            </div>
+            <div class="datos-postulante px-3">
+                <p class="mb-0"><small class="text-muted">{{this.id}}</small></p>
+                <h5>{{this.nombres}} {{this.primer_apellido}}</h5>
+                <p class="card-subtitle mb-0 text-muted"><strong>Ciudad:</strong><label id="lugar_vacante"
+                        class="ml-2">{{this.ciudad}}</label></p>
+            </div>
+            <button type="button" data-toggle="collapse" data-target="#collapse_postulado_{{this.id}}" aria-expanded="true"
+                class="btn px-1 py-1 ml-auto" id="btn_seecv"><i class='fas fas fa-angle-double-right'
+                    style='font-size:32px;color:orange'></i></button>
+        </div>
+
+        <div class="d-lg-none d-inline-flex justify-content-start py-1 py-1 px-4 ">
+
+            <button type="button" data-toggle="collapse" data-target="#collapse_postulado_{{this.id}}" aria-expanded="true"
+                class="btn px-1 py-1 ml-auto" id="btn_seecv">
+                <div class="avatar-preview1">
+                    <div id="imagePreview" style="background-image: url(/images/perfil.jpg);"></div>
+                </div>
+            </button>
+        </div>
+    </li>
+
+</ul>

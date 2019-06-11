@@ -21,19 +21,19 @@
         <hr class="mt-0">
         <small class="text-muted">
             <label for="descripción_vacante" id="descripción_vacante">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquet malesuada feugiat. Curabitur
-                fermentum bibendum nulla, non dictum ipsum tincidunt non. Quisque convallis pharetra tempor. Donec id
-                pretium leo. Pellentesque luctus massa non elit viverra pellentesque. Cras vitae neque molestie, rhoncus
-                ipsum sit amet, lobortis dui. Fusce in urna sem. <br />
-                Etiam nisi turpis, eleifend nec tellus id, efficitur pellentesque dolor. Proin vitae massa a augue
-                sagittis vulputate. Duis vel fringilla magna, sit amet vestibulum enim. Fusce laoreet accumsan nisl eu
-                sagittis. Morbi hendrerit sapien eget efficitur imperdiet. Aenean vitae nisl id est placerat congue a et
-                nisi.
+                {{this.descripcion}}
             </label>
         </small>
         <h6 class="card-subtitle py-2 mb-2 text-muted"><strong>Duración:</strong><label id="duracion_vacante"
                 class="ml-2">{{this.Tiempo}}</label></h6>
-        <button type="button" class="btn btn-warning mb-4 btn-block" 
-            id="btn_cambiar_contrasena"><strong>Aplicar</strong></button>
+                
+                    <form action="/trabajos" method="post">
+                        <input type="hidden" name="thisid" value="{{ this._id }}">
+                        <button class="btn btn-warning mb-4 btn-block" id="btn_cambiar_contrasena" type="submit">
+                            <strong>Aplicar</strong>
+                        </button>
+                    </form>           
+        
+        
     </div>
 </div>
