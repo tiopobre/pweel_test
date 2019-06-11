@@ -85,6 +85,7 @@ router.get('/vacantes', function (req, res, next) {
         id_user = user._id;
         Uname = user.cv.inf.nombres;
         tam_ista_ids = user.cv.vacantes_propias.length;
+        id_v0 = user.cv.vacantes_propias[0];
     });
     //*/*//**/ */
   
