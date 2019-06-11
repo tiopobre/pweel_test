@@ -84,6 +84,7 @@ router.get('/vacantes', function (req, res, next) {
     User.findOne({'cuenta.email': email}, function(err, user) {
         id_user = user._id;
         Uname = user.cv.inf.nombres;
+        tam_ista_ids = user.cv.vacantes_propias.length;
     });
     //*/*//**/ */
   
@@ -104,7 +105,7 @@ router.get('/vacantes', function (req, res, next) {
             vacantes2: V_chunk2,
             doctam: docs.length,
             id_usuario: id_user,
-            list_tam:tam_ista_ids,
+            list_tam : tam_ista_ids,
             idvacante0 :id_v0,
             nombreu: Uname,
 
