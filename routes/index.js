@@ -42,7 +42,7 @@ router.get('/trabajos', function(req, res, next) {
     var T_chunk2 = [];
     var V_aceptadas1 =[];
     var V_aceptadas2 =[];
-
+    var V_aceptadas[];
     // todas las vacantes
     vacante.find({}, function(err, docs) {
 
@@ -59,18 +59,16 @@ router.get('/trabajos', function(req, res, next) {
             } else {
                 var V_pos = user.cv.vacantes_presentadas;
                 for (var i = 0; i < V_pos.length; i++) {
-                    if (i % 2 == 0) {
-                        if(V_pos[i].estado == 0){
-                            V_pos1.push(V_pos[i]);
-                        }else{
-                            V_aceptadas1.push(V_pos[i]);
-                        }                        
+                    if (i % 2 == 0 ) {
+                        V_pos1.push(V_pos[i]);
+                                             
                     } else {
-                        if(V_pos[i].estado == 0){
-                            V_pos2.push(V_pos[i]);
-                        }else{
-                            V_aceptadas2.push(V_pos[i]);
-                        } 
+                        V_pos2.push(V_pos[i]);                        
+                    }
+                }
+                for (var i = 0; i < V_pos.length; i++) {
+                    if ( V_pos.estado != 0) {
+                        V_aceptadas.push(V_pos[i]);                                             
                     }
                 }
                 //render pag
@@ -81,7 +79,7 @@ router.get('/trabajos', function(req, res, next) {
                     vacantes2: T_chunk2,
                     vacantes_pos1: V_pos1,
                     vacantes_pos2: V_pos2,
-                    Aaptadas1 : V_aceptadas1,
+                    Aaptadas1 : V_aceptadas,
                     Aaptadas1 : V_aceptadas2
                 });
             }
