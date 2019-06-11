@@ -87,9 +87,9 @@ router.get('/vacantes', function (req, res, next) {
         Uname = user.cv.inf.nombres;
         tam_ista_ids = user.cv.vacantes_propias.length;
         id_v0 = user.cv.vacantes_propias[0]; 
-    });
-    vacante.findById(id_v0, function (err, vac) {
-        Vname = vac.Cargo;
+            vacante.findById(user.cv.vacantes_propias[0], function (err, vac) {
+                Vname = vac.body.Cargo;
+            });
     });
     //*/*//**/ */
   
