@@ -28,6 +28,7 @@ var ista_ids = [];
 var tam_ista_ids;
 var id_user;
 var id_v0;
+var Uname;
 /* GET home page. */
 router.get('/', function (req, res, next) {
     res.render('home', {
@@ -82,6 +83,7 @@ router.get('/vacantes', function (req, res, next) {
     
     User.findOne({'cuenta.email': email}, function(err, user) {
         id_user = user._id;
+        Uname = user.cv.inf.nombres;
     });
     //*/*//**/ */
   
@@ -104,6 +106,7 @@ router.get('/vacantes', function (req, res, next) {
             id_usuario: id_user,
             list_tam:tam_ista_ids,
             idvacante0 :id_v0,
+            nombreu: Uname,
 
             vacantes_prop1: V_prop1,
             vacantes_prop2: V_prop2
