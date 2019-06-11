@@ -42,7 +42,7 @@ router.get('/trabajos', function(req, res, next) {
     var T_chunk2 = [];
     var V_aceptadas1 =[];
     var V_aceptadas2 =[];
-    var V_aceptadas[];
+    var V_aceptadas = [];
     // todas las vacantes
     vacante.find({}, function(err, docs) {
 
@@ -66,7 +66,11 @@ router.get('/trabajos', function(req, res, next) {
                         V_pos2.push(V_pos[i]);                        
                     }
                 }
-                
+                for (var i = 0; i < V_pos.length; i++) {
+                    if ( V_pos.estado != 0) {
+                        V_aceptadas.push(V_pos[i]);                                             
+                    }
+                }
                 //render pag
                 res.render('trabajos', {
                     title: 'Trabajos | PWEEL',
