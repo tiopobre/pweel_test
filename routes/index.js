@@ -40,6 +40,8 @@ router.get('/trabajos', function(req, res, next) {
     var V_pos2 = [];
     var T_chunk1 = [];
     var T_chunk2 = [];
+    var V_aceptadas1 =[];
+    var V_aceptadas2 =[];
 
     // todas las vacantes
     vacante.find({}, function(err, docs) {
@@ -51,18 +53,24 @@ router.get('/trabajos', function(req, res, next) {
                 T_chunk2.push(docs[i]);
             }
         }
-        User.findOne({
-            'cuenta.email': email
-        }, function(err, user) {
+        User.findOne({'cuenta.email': email}, function(err, user) {
             if (err) {
                 console.log("--------------->ERROR");
             } else {
                 var V_pos = user.cv.vacantes_presentadas;
                 for (var i = 0; i < V_pos.length; i++) {
                     if (i % 2 == 0) {
-                        V_pos1.push(V_pos[i]);
+                        if(V_pos[i].estado == 0){
+                            V_pos1.push(V_pos[i]);
+                        }else{
+                            V_aceptadas1.push(V_pos[i]);
+                        }                        
                     } else {
-                        V_pos2.push(V_pos[i]);
+                        if(V_pos[i].estado == 0){
+                            V_pos2.push(V_pos[i]);
+                        }else{
+                            V_aceptadas2.push(V_pos[i]);
+                        } 
                     }
                 }
                 //render pag
@@ -72,7 +80,9 @@ router.get('/trabajos', function(req, res, next) {
                     vacantes1: T_chunk1,
                     vacantes2: T_chunk2,
                     vacantes_pos1: V_pos1,
-                    vacantes_pos2: V_pos2
+                    vacantes_pos2: V_pos2,
+                    Aaptadas1 : V_aceptadas1,
+                    Aaptadas1 : V_aceptadas2
                 });
             }
         });
